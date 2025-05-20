@@ -41,9 +41,15 @@
             "problemMatcher": []
         },
         {
-            "label": "Build",
+            "label": "Build main.c",
             "type": "shell",
             "command": "call Build.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "stm32_compile oled.c",
+            "type": "shell",
+            "command":"echo off & cd ../cmd & call stm32_compile ${workspaceFolder} oled.c",
             "problemMatcher": []
         },
     ]
