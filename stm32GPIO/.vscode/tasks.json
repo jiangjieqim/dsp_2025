@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "commit all",
+            "type": "shell",
+            "command": "TortoiseGitProc.exe /command:commit /path:${workspaceFolder}  /closeonend:0 /logmsg:. & git push",
+            "problemMatcher": []
+            // %time%-message_for_file:
+        },
+        {
+            "label": "commit ${file}",
+            "type": "shell",
+            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0 /logmsg:\"${fileBasename} ${lineNumber}\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "openimg\t(打开img文件夹)",
+            "type": "shell",
+            "command": "cd .vscode & openimg",
+            "problemMatcher": []
+        },
+        {
+            "label": "chrome ${file}",
+            "type": "shell",
+            "command":"echo off & cd ../../ & cd github/jjqmdlib/cmd & call opendoc ${file}",
+            "problemMatcher": []
+        },
+        {
+            "label": "git clean",
+            "type": "shell",
+            "command": "git clean -fd & git status",
+            "problemMatcher": []
+        },
+        {
+            "label": "git remote -v",
+            "type": "shell",
+            "command": "git remote -v",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "call Build.bat",
+            "problemMatcher": []
+        },
+    ]
+}
