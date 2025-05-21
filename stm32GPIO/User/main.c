@@ -1,5 +1,19 @@
 //..\stm32GPIO\Objects\1.hex
 
+
+/*
+#region flow
+
++----------------------+
+|startup_stm32f10x_md.s|--->启动文件
++----------------------+
+stm32f10x.h
+system_stm32f10x.c
+
+#endregion
+*/
+
+
 #include "stm32f10x.h"  // 根据实际型号包含对应的头文件
 
 void SoftwareDelay(uint32_t delay) {
