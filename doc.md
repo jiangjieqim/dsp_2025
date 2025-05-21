@@ -1,4 +1,5 @@
 [STM32常见问题](#STM32常见问题)  
+[STM32f103C8T6启动流程](#STM32f103C8T6启动流程)  
 
 DSP即Digital Signal Processing 数字信号处理  
 
@@ -2507,5 +2508,35 @@ VCC/VDD --->VDDA
 2.Crysital Frquency:8M  
 
 
-{r}流程说明{!r}  
+# STM32f103C8T6启动流程
 {file}stm32GPIO/User/main.c@flow{!file}  
+{h}https://zhuanlan.zhihu.com/p/430014447{!h}
+
+
+* 1. 初始化堆栈指针（SP）和程序计数器（PC）
+    设置栈指针（SP）的初始值，指向栈顶地址（__initial_sp）。
+
+    复位后，PC 指针指向复位中断向量（Reset_Handler），开始执行启动代码13。
+    
+* 2. 定义堆（Heap）和栈（Stack）大小
+        使用 EQU 定义堆（Heap_Size）和栈（Stack_Size）的大小，例如：
+
+        assembly
+        Stack_Size EQU 0x400  ; 1KB 栈空间
+        Heap_Size  EQU 0x200  ; 512B 堆空间
+        栈用于局部变量和函数调用，堆用于动态内存分配（如 malloc）510。
+
+* 3. 设置中断向量表
+        定义中断向量表（__Vectors），存放异常和中断服务函数的入口地址。
+
+        第一个条目是栈顶地址，第二个条目是 Reset_Handler（复位中断入口），后续是 NMI、HardFault 等中断处理函数310。
+
+* 4. 调用 SystemInit() 配置系统时钟
+        在较新版本（如 3.5 版）的启动文件中，会调用 SystemInit()（位于 system_stm32f10x.c），初始化时钟（如 HSI、PLL 等）。
+
+        旧版本需在 main() 中手动调用 SystemInit()18。
+
+* 5. 跳转到 __main 和用户 main() 函数
+        Reset_Handler 执行后，会跳转到 C 库的 __main，完成运行时环境初始化（如全局变量、静态变量）。
+
+        最终进入用户的 main() 函数，开始执行应用程序311。
