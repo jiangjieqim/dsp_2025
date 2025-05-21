@@ -1,3 +1,5 @@
+//..\stm32GPIO\Objects\1.hex
+
 #include "stm32f10x.h"  // 根据实际型号包含对应的头文件
 
 void SoftwareDelay(uint32_t delay) {

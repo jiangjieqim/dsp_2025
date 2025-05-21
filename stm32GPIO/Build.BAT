@@ -9,6 +9,9 @@
 @REM "ArmLink" --Via ".\Objects\1.lnp"
 @REM "fromelf.exe" ".\Objects\1.axf" --i32combined --output ".\Objects\1.hex"
 
+echo off
+
+echo %time%
 set KEIL_PATH="C:\Keil_v5\UV4\UV4.exe"
 
 if not exist %KEIL_PATH% ( echo is not exist %KEIL_PATH% & exit )
@@ -26,3 +29,4 @@ if %errorlevel% equ 0 (
 ) else (
     echo build fail!
 )
+echo %time%

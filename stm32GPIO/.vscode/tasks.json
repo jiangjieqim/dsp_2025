@@ -40,10 +40,16 @@
             "command": "git remote -v",
             "problemMatcher": []
         },
+        // {
+        //     "label": "Build main.c",
+        //     "type": "shell",
+        //     "command": "call Build.bat",
+        //     "problemMatcher": []
+        // },
         {
-            "label": "Build main.c",
+            "label": "stm32_compile main.c",
             "type": "shell",
-            "command": "call Build.bat",
+            "command":"echo off & cd ../cmd & call stm32_compile ${workspaceFolder} main.c",
             "problemMatcher": []
         },
         {
