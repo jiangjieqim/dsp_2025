@@ -5,9 +5,9 @@ DSP即Digital Signal Processing 数字信号处理
 [最小系统](#最小系统)  
 `复位电路增加电容的原因`  
 
-{c}#ff00ff STC89C51RC{!c}{h}:8001/github/dsp_2025/icpdf/STC89C51RC-RD.pdf{!h}  
-{c}#ff00ff STC89CXX{!c}{h}:8001/github/dsp_2025/icpdf/STC89CXX.pdf{!h}  
-{c}#ff00ff STM32F103X6{!c}{h}:8001/github/dsp_2025/icpdf/STM32F103X6.pdf{!h}  
+{c}#ff00ff STC89C51RC{!c}{h2}icpdf/STC89C51RC-RD.pdf{!h2}  
+{c}#ff00ff STC89CXX{!c}{h2}icpdf/STC89CXX.pdf{!h2}  
+{c}#ff00ff STM32F103X6{!c}{h2}icpdf/STM32F103X6.pdf{!h2}  
 
 * [寄存器Mapping](#寄存器Mapping)`寄存器的地址映射`  
 * [TCON寄存器](#TCON寄存器)`定时器相关`  
@@ -2086,7 +2086,7 @@ implies that the output is in a high-impedance  输出高阻态(悬空状态,放
 
 {h}https://blog.csdn.net/rjszcb/article/details/141755527{!h}  
 
-参考手册{h}:8001/github/dsp_2025/icpdf/24C02C.PDF{!h}  
+参考手册{h2}icpdf/24C02C.PDF{!h2}  
 
 {r}SCL高电平的时候 SDA不允许数据变化,SCL低电平的时候 SDA才可以变化{!r}  
 
@@ -2150,7 +2150,7 @@ implies that the output is in a high-impedance  输出高阻态(悬空状态,放
 * `The AT24C32/64 provides 32,768/65,536 bits of serial electrically erasable and programmable read only memory (EEPROM) organized as 4096/8192 words of 8 bits
 each.`  
 
-* 手册{h}:8001/github/dsp_2025/icpdf/AT24C32.pdf{!h}  
+* 手册{h2}icpdf/AT24C32.pdf{!h2}  
 
 Device Addressing  
 

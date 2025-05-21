@@ -6,8 +6,7 @@
         {
             "label": "commit all",
             "type": "shell",
-            // "command": "TortoiseGitProc.exe /command:commit /path:${workspaceFolder} /closeonend:0 /logmsg ${file} & git status  & git pull & git push",
-            "command":"cd .. & call cmd/ci_all.bat",
+            "command":"cd ../cmd & call ci_all.bat",
             "problemMatcher": []
         },
         {
