@@ -17,14 +17,14 @@
 /c51/*.jiang
 
 /stm32GPIO/DebugConfig
-/stm32GPIO/protues/*.pdsbak
-/stm32GPIO/Objects/*.crf
-/stm32GPIO/Objects/*.htm
-/stm32GPIO/Objects/*.hex
-/stm32GPIO/Objects/1.*
-/stm32GPIO/Objects/*.d
-/stm32GPIO/Objects/*.o
-/stm32GPIO/Objects/*.dep
+# /stm32GPIO/protues/*.pdsbak
+# /stm32GPIO/Objects/*.crf
+# /stm32GPIO/Objects/*.htm
+# /stm32GPIO/Objects/*.hex
+# /stm32GPIO/Objects/1.*
+# /stm32GPIO/Objects/*.d
+# /stm32GPIO/Objects/*.o
+# /stm32GPIO/Objects/*.dep
 
 /stm32GPIO/Listings
 /stm32GPIO/1.uvguix.Administrator
@@ -32,3 +32,8 @@
 /stm32GPIO/proteus/*.workspace
 /stm32GPIO/.vscode/settings.json
 /switch.bat
+
+/stm32GPIO/*.workspace
+/proteus1/Project Backups
+/stm32GPIO/Objects
+/stm32GPIO/Target 1.BAT
