@@ -1,3 +1,5 @@
+[STM32常见问题](#STM32常见问题)  
+
 DSP即Digital Signal Processing 数字信号处理  
 
 [资料查询相关](#资料查询相关)  
@@ -91,7 +93,6 @@ DSP即Digital Signal Processing 数字信号处理
 [微动开关](#微动开关)  
 [代码范例](#代码范例)  
 [Keil常见编译错误](#Keil常见编译错误)  
-[STM32常见问题](#STM32常见问题)  
 
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
@@ -2431,6 +2432,62 @@ Command line参数为
 ![](img/87.jpg)  
 ![](img/88.jpg)  
 ![](img/89.jpg)  
+![](img/90.jpg)  
+
+
+        STM32F103C8T6（LQFP48封装）引脚功能表
+
+        Pin	GPIO	默认复用功能	特殊功能/备注
+        
+        1	PB6	I2C1_SCL, TIM4_CH1	5V耐受 (FT)
+        2	PB7	I2C1_SDA, TIM4_CH2	5V耐受 (FT)
+        3	BOOT0	启动模式选择	接10kΩ电阻到地或VDD
+        4	PB8	TIM4_CH3, SDIO_D4	5V耐受 (FT)
+        5	PB9	TIM4_CH4, SDIO_D5	5V耐受 (FT)
+        6	VSS	地	必须接地
+        7	VDD	主电源（2.0-3.6V）	需接滤波电容
+        8	NRST	复位（低电平有效）	接RC电路（10kΩ+100nF）
+        9	PC0	ADC1_IN10	模拟输入
+        10	PC1	ADC1_IN11	模拟输入
+        11	PC2	ADC1_IN12	模拟输入
+        12	PC3	ADC1_IN13	模拟输入
+        13	VSSA	模拟地	ADC/DAC参考地
+        14	VDDA	模拟电源（2.0-3.6V）	ADC/DAC供电
+        15	PA0-WKUP	TIM2_CH1, USART2_CTS	唤醒引脚（WKUP），ADC1_IN0
+        16	PA1	TIM2_CH2, USART2_RTS	ADC1_IN1
+        17	PA2	TIM2_CH3, USART2_TX	ADC1_IN2
+        18	PA3	TIM2_CH4, USART2_RX	ADC1_IN3
+        19	PA4	SPI1_NSS, DAC_OUT1	ADC1_IN4
+        20	PA5	SPI1_SCK, DAC_OUT2	ADC1_IN5
+        21	PA6	SPI1_MISO, TIM3_CH1	ADC1_IN6
+        22	PA7	SPI1_MOSI, TIM3_CH2	ADC1_IN7
+        23	PC4	ADC1_IN14	模拟输入
+        24	PC5	ADC1_IN15	模拟输入
+        25	PB0	TIM3_CH3, ADC1_IN8	5V耐受 (FT)
+        26	PB1	TIM3_CH4, ADC1_IN9	5V耐受 (FT)
+        27	PB2	BOOT1	启动模式选择（通常接地）
+        28	PB10	I2C2_SCL, USART3_TX	5V耐受 (FT)
+        29	PB11	I2C2_SDA, USART3_RX	5V耐受 (FT)
+        30	VSS	地	必须接地
+        31	VDD	主电源	需接滤波电容
+        32	PB12	SPI2_NSS, USART3_CK	5V耐受 (FT)
+        33	PB13	SPI2_SCK, USART3_CTS	5V耐受 (FT)
+        34	PB14	SPI2_MISO, TIM1_CH2N	5V耐受 (FT)
+        35	PB15	SPI2_MOSI, TIM1_CH3N	5V耐受 (FT)
+        36	PC6	TIM3_CH1, SDIO_D6	5V耐受 (FT)
+        37	PC7	TIM3_CH2, SDIO_D7	5V耐受 (FT)
+        38	PC8	TIM3_CH3, SDIO_D0	5V耐受 (FT)
+        39	PC9	TIM3_CH4, SDIO_D1	5V耐受 (FT)
+        40	PA8	TIM1_CH1, USART1_CK	5V耐受 (FT)
+        41	PA9	TIM1_CH2, USART1_TX	5V耐受 (FT)
+        42	PA10	TIM1_CH3, USART1_RX	5V耐受 (FT)
+        43	PA11	TIM1_CH4, USART1_CTS	USB DM (Full Speed)
+        44	PA12	TIM1_ETR, USART1_RTS	USB DP (Full Speed)
+        45	PA13	SWDIO, JTMS	调试接口（禁止作为GPIO使用）
+        46	VSS	地	必须接地
+        47	VDD	主电源	需接滤波电容
+        48	PA14	SWCLK, JTCK	调试接口（禁止作为GPIO使用）
+
 
 https://download.csdn.net/blog/column/12265520/145790170  
 https://www.cnblogs.com/bliss-/p/18602063  
@@ -2448,3 +2505,4 @@ GMD     --->VSSA
 VCC/VDD --->VDDA
 
 2.Crysital Frquency:8M  
+
