@@ -5,9 +5,9 @@ DSP即Digital Signal Processing 数字信号处理
 [最小系统](#最小系统)  
 `复位电路增加电容的原因`  
 
-{c}#ff00ff STC89C51RC{!c}{h}:8001/github/dsp/icpdf/STC89C51RC-RD.pdf{!h}  
-{c}#ff00ff STC89CXX{!c}{h}:8001/github/dsp/icpdf/STC89CXX.pdf{!h}  
-{c}#ff00ff STM32F103X6{!c}{h}:8001/github/dsp/icpdf/STM32F103X6.pdf{!h}  
+{c}#ff00ff STC89C51RC{!c}{h}:8001/github/dsp_2025/icpdf/STC89C51RC-RD.pdf{!h}  
+{c}#ff00ff STC89CXX{!c}{h}:8001/github/dsp_2025/icpdf/STC89CXX.pdf{!h}  
+{c}#ff00ff STM32F103X6{!c}{h}:8001/github/dsp_2025/icpdf/STM32F103X6.pdf{!h}  
 
 * [寄存器Mapping](#寄存器Mapping)`寄存器的地址映射`  
 * [TCON寄存器](#TCON寄存器)`定时器相关`  
@@ -249,7 +249,7 @@ T0方式时TH0和TL0寄存器中的值的计算方法
         +-------------------------+
     
 
-{file}github/dsp/c51/test.c@TIME_TEST{!file}  
+{file}c51/test.c@TIME_TEST{!file}  
 
 TMOD寄存器  
 
@@ -320,7 +320,7 @@ SBUF一次只能发送和接收一个字节的数据。
 
 ![](img/28.png)  
 
-{file}github/dsp/c51/test.c@UART{!file}  
+{file}c51/test.c@UART{!file}  
 
 ![](img/29.png)  
 ![](img/30.png)  
@@ -752,10 +752,10 @@ Option for Target/Xtal(MHz) (如填写12Mhz)
 # Keil uVision4命令行编译
 
 `compile.bat`  
-{file}github/dsp/cmd/compile.bat{!file}
+{file}cmd/compile.bat{!file}
 
 `vscode配置c_cpp_properties.json`  
-{file}github/dsp/c51/.vscode/c_cpp_properties.json{!file}  
+{file}c51/.vscode/c_cpp_properties.json{!file}  
 头文件路径定义
 ```
 "./libs/**" //C51自定义工具库
@@ -800,7 +800,7 @@ Option for Target/Xtal(MHz) (如填写12Mhz)
 
 build All target files...可以重新生成  
 
-{file}github/dsp/c51/test.c@编译流程{!file}
+{file}c51/test.c@编译流程{!file}
 {r}A51 for Assembler Compiling{!r}  
 
 {r}C51 Compiling C files{!r}  
@@ -837,7 +837,7 @@ The BL51 Linker/Locator merges segments from object modules, locates them, and c
 `OH51 MYFILE HEXFILE(MYFILE.HEX)`  
 
 {r}github/nodelib/c51_compile2.js说明{!r}  
-{file}github/dsp/c51/filelist.json{!file}  
+{file}c51/filelist.json{!file}  
 {file}github/nodelib/c51_compile2.js@filelistjson{!file}  
 {file}github/nodelib/c51_compile2.js@c51compile说明{!file}  
 
@@ -2031,7 +2031,7 @@ RS＝1、RW＝1——表示从LCM读取数据
 
 {r}读取忙状态的时序图{!r}  
 ![](img/56.jpg)  
-{file}github/dsp/c51/led1612_test.c@LCD_Check_Busy{!file}  
+{file}c51/led1612_test.c@LCD_Check_Busy{!file}  
 
 RS＝0、RW＝1——表示读取Busy标志  
 
@@ -2067,7 +2067,7 @@ implies that the output is in a high-impedance  输出高阻态(悬空状态,放
 
 ![](img/74HC595.SVG)  
 给595芯片写一字节数据    
-{file}github/dsp/c51/test.c@74hc595{!file}  
+{file}c51/test.c@74hc595{!file}  
 
 级联的时候低位->高位 Q1~Q7(第1片595) Q1-Q7(第2片595)  
 ![](img/2.SVG)  
@@ -2086,7 +2086,7 @@ implies that the output is in a high-impedance  输出高阻态(悬空状态,放
 
 {h}https://blog.csdn.net/rjszcb/article/details/141755527{!h}  
 
-参考手册{h}:8001/github/dsp/icpdf/24C02C.PDF{!h}  
+参考手册{h}:8001/github/dsp_2025/icpdf/24C02C.PDF{!h}  
 
 {r}SCL高电平的时候 SDA不允许数据变化,SCL低电平的时候 SDA才可以变化{!r}  
 
@@ -2150,7 +2150,7 @@ implies that the output is in a high-impedance  输出高阻态(悬空状态,放
 * `The AT24C32/64 provides 32,768/65,536 bits of serial electrically erasable and programmable read only memory (EEPROM) organized as 4096/8192 words of 8 bits
 each.`  
 
-* 手册{h}:8001/github/dsp/icpdf/AT24C32.pdf{!h}  
+* 手册{h}:8001/github/dsp_2025/icpdf/AT24C32.pdf{!h}  
 
 Device Addressing  
 
@@ -2251,10 +2251,10 @@ SN74HC373 HM62256
 
 占空比1%  
 ![](img/71.jpg)  
-{file}github/dsp/c51/test.c@DCMotor{!file}  
+{file}c51/test.c@DCMotor{!file}  
 
 # 步进电机28YJ-48
-参考PWM{h}:8001/github/jjqmdlib/entry/doc.html?file=github/dsp/doc.md&l=PWM{!h} 
+参考PWM{h}:8001/github/jjqmdlib/entry/doc.html?file=github/dsp_2025/doc.md&l=PWM{!h} 
 
 28 有效最大外径28mm  
 B: 步进电机  
@@ -2311,7 +2311,7 @@ A/B x C/D x E/F x G/H = 8910/567424 ≈ 1/64
         7 0 0 0 1
         8 1 0 0 1
 
-{file}github/dsp/c51/test.c@StepMotor{!file}
+{file}c51/test.c@StepMotor{!file}
 
 
 # ULN2003
@@ -2369,7 +2369,7 @@ ms pulse) is middle, "90" (~2 ms pulse) is all the way to the right,
 2.5ms	180度
 ```
 
-{file}github/dsp/c51/test.c@_SERVO_SG90_{!file}  
+{file}c51/test.c@_SERVO_SG90_{!file}  
 
 # 微动开关
 
@@ -2379,7 +2379,7 @@ ms pulse) is middle, "90" (~2 ms pulse) is all the way to the right,
 
 # 代码范例
 
-{file}github/dsp/img/example/led.c{!file}  
+{file}img/example/led.c{!file}  
 
 # Keil常见编译错误
 (1)
