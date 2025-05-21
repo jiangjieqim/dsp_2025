@@ -1,0 +1,14 @@
+{
+    "KeilC51":"C:/Keil_v5/C51",
+    "directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND",
+    "rpath":"D:/github/dsp/c51",
+    "include": "./include", 
+    "STARTUP": "STARTUP.A51",
+    "CPU_TYPE":"AT89C52",
+    "CPU_VENDOR":"Atmel",
+    "CPU_XTAL":"11059200",
+    "src": {
+        "path": ""  ,
+        "files": []
+    }
+}

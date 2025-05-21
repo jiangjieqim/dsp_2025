@@ -1,0 +1,11 @@
+SET C51INC=C:\Keil_v5\C51\INC\Atmel\;C:\Keil_v5\C51\INC\
+SET C51LIB=C:\Keil_v5\C51\LIB
+SET CPU_TYPE=AT89C52
+SET CPU_VENDOR=Atmel
+SET UV2_TARGET=Target 1
+SET CPU_XTAL=0x00A8C000
+"C:\Keil_v5\C51\BIN\A51.EXE" @STARTUP._ia
+"C:\Keil_v5\C51\BIN\C51.EXE" @utils.__i
+"C:\Keil_v5\C51\BIN\C51.EXE" @timer.__i
+"C:\Keil_v5\C51\BIN\BL51.EXE" @test.lnp
+"C:\Keil_v5\C51\BIN\OH51.EXE" "test" 

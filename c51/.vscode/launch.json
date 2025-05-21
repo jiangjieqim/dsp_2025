@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "test",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/main.exe",
+            // "program": "c://game20210510sub/dll/test.exe",
+            "args": [
+              // "-lua","game/shadowmaptest.lua",
+              // "-lua","game/server/server.lua", "-server","1",
+              // "-lua","game/rocking.lua",
+              // "-lua","game/outlinetest.lua",
+              // "-lua","game/fboviewTest.lua",
+            //   "-lua","game/test1.lua",
+      
+      
+            //   "-github","${env:githubdir}",
+            //   "-winpos","1", "-log", "1","-optimization","0","-width","700","-height","500",
+              
+            //   "-ip","192.168.1.13:8006",
+      
+            //   "-res","${env:githubdir}/game_v11/res",
+            //   "-lua_workspace","${env:githubdir}/game_v11/luascript",
+      
+            //   "-workspace","${workspaceFolder}",
+      
+            //   "-debug","1",
+              
+            //   "-nlog","1",//显示有颜色的日志
+              // "-nlog_memory","1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            // "preLaunchTask": "compile_test",
+        }
+    ]
+}

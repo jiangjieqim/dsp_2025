@@ -1,0 +1,122 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "commit all",
+            "type": "shell",
+            // "command": "TortoiseGitProc.exe /command:commit /path:${workspaceFolder} /closeonend:0 /logmsg ${file} & git status  & git pull & git push",
+            "command":"cd .. & call cmd/ci_all.bat",
+            "problemMatcher": []
+        },
+        {
+            "label": "commit ${file}",
+            "type": "shell",
+            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0  /logmsg . & git push",
+            "problemMatcher": []
+        },
+        {
+            "label": "openimg\t(打开img文件夹)",
+            "type": "shell",
+            "command": "cd ../img & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "help",
+            "type": "shell",
+            "command": "c: & cd C:\/Keil\/C51\/hlp & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "open dsp",
+            "type": "shell",
+            "command": "cd .. & explorer .",
+            "problemMatcher": []
+        },
+        //C:\Keil\C51\hlp
+        {
+            "label": "open icpdf资料",
+            "type": "shell",
+            "command": "cd ../icpdf & explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "open workspaceFolder",
+            "type": "shell",
+            "command": "explorer .",
+            "problemMatcher": []
+        },
+        {
+            "label": "git pull (更新)",
+            "type": "shell",
+            "command": "git pull",
+            "problemMatcher": []
+        },
+        {
+            "label": "chrome ${file}",
+            "type": "shell",
+            "command":"echo off & cd ../../../ & cd github/jjqmdlib/cmd & call opendoc ${file}",
+            // call opendoc ${workspaceFolder}/doc.md
+            // "command":"echo ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "c51_compile test1",
+            "type": "shell",
+            // "command":"echo off& cd ../cmd & call compile",
+            // D:/github/dsp/libs/utils.c
+            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} filelist.json test1.c",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "c51_compile led1612_test",
+            "type": "shell",
+            // "command":"echo off& cd ../cmd & call compile",
+            // D:/github/dsp/libs/utils.c
+            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json led1612_test.c",
+            "problemMatcher": []
+        },
+        {
+            "label": "c51_compile oled",
+            "type": "shell",
+            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json oled.c",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "c51_compile timer",
+            "type": "shell",
+            // "command":"echo off& cd ../cmd & call compile",
+            // D:/github/dsp/libs/utils.c
+            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json timer.c",
+            "problemMatcher": []
+        },
+        // {
+        //     "label": "c51_clear",
+        //     "type": "shell",
+        //     // "command":"echo off& cd ../cmd & call compile",
+        //     "command":"echo off & del *.M51 *.lnp *.OBJ *.LST *.lst *.bak *.txt *.uvopt *.__i *._ia *.plg *.hex",
+        //     "problemMatcher": []
+        // },
+        // {
+        //     "label": "compile_main",
+        //     "type": "shell",
+        //     "command":"echo off & cd cmd & call compile_main",
+        //     "problemMatcher": []
+        // },
+        {
+			"label": "nginx start",
+            "type": "shell",
+            "command":"echo off & cd ../../../ & cd github/nginx/& reloadstart",
+            "problemMatcher": []
+		},
+        {
+			"label": "clear",
+            "type": "shell",
+            "command":"echo off & cd ../proteus1 & del *.workspace *.pdsbak & cd clip & del *.workspace *.pdsbak & cd ${workspaceFolder} & del *._ia *.__i *.plg *.bak *.lst *.obj & git status",
+            "problemMatcher": []
+		}
+    ]
+}

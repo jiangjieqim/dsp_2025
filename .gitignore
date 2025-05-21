@@ -14,7 +14,6 @@
 /proteus1/*.workspace
 /proteus1/*.pdsbak
 /c51/*.hex
-/c51/*
 /c51/*.jiang
 
 /stm32GPIO/DebugConfig
@@ -32,3 +31,4 @@
 /stm32GPIO/proteus/*.pdsbak
 /stm32GPIO/proteus/*.workspace
 /stm32GPIO/.vscode/settings.json
+/switch.bat
