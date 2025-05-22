@@ -2536,6 +2536,7 @@ VCC/VDD --->VDDA
 
 {h}https://zhuanlan.zhihu.com/p/430014447{!h}
 
+{h}https://chat.deepseek.com/a/chat/s/cce82007-5ab0-4676-8823-653bf0003056{!h}  
 
 * (1). 初始化堆栈指针（SP）和程序计数器（PC）
     设置栈指针（SP）的初始值，指向栈顶地址（__initial_sp）。
@@ -2556,12 +2557,12 @@ VCC/VDD --->VDDA
 * (3). 设置中断向量表
         定义中断向量表（__Vectors），存放异常和中断服务函数的入口地址。
 
-        第一个条目是栈顶地址，第二个条目是 Reset_Handler（复位中断入口），后续是 NMI、HardFault 等中断处理函数310。
+        第一个条目是栈顶地址，第二个条目是 Reset_Handler（复位中断入口），后续是 NMI、HardFault 等中断处理函数。
 
 * (4). 调用 SystemInit() 配置系统时钟
         在较新版本（如 3.5 版）的启动文件中，会调用 SystemInit()（位于 system_stm32f10x.c），初始化时钟（如 HSI、PLL 等）。
 
-        旧版本需在 main() 中手动调用 SystemInit()18。
+        旧版本需在 main() 中手动调用 SystemInit()。
 
 {file}stm32GPIO\Start\system_stm32f10x.c@SystemInit{!file}
 
