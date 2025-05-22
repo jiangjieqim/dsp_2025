@@ -200,7 +200,7 @@ static void SetSysClock(void);
 /** @addtogroup STM32F10x_System_Private_Functions
   * @{
   */
-
+#pragma region SystemInit
 /**
   * @brief  Setup the microcontroller system
   *         Initialize the Embedded Flash Interface, the PLL and update the 
@@ -267,7 +267,7 @@ void SystemInit (void)
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH. */
 #endif 
 }
-
+#pragma endregion
 /**
   * @brief  Update SystemCoreClock variable according to Clock Register Values.
   *         The SystemCoreClock variable contains the core clock (HCLK), it can
