@@ -386,19 +386,11 @@
               <FilePath>.\Start\startup_stm32f10x_md.s</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Start\stm32f10x.h</FilePath>
-            </File>
-            <File>
               <FileName>system_stm32f10x.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Start\system_stm32f10x.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>Library</GroupName>
         </Group>
         <Group>
           <GroupName>User</GroupName>
