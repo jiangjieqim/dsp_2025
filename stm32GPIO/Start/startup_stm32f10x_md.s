@@ -3,6 +3,7 @@
 ;* Author             : MCD Application Team
 ;* Version            : V3.5.0
 ;* Date               : 11-March-2011
+;#region Description
 ;* Description        : STM32F10x Medium Density Devices vector table for MDK-ARM 
 ;*                      toolchain.  
 ;*                      This module performs:
@@ -14,6 +15,7 @@
 ;*                        calls main()).
 ;*                      After Reset the CortexM3 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
+;*#endregion
 ;* <<< Use Configuration Wizard in Context Menu >>>   
 ;*******************************************************************************
 ; THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS

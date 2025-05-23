@@ -2538,6 +2538,8 @@ VCC/VDD --->VDDA
 
 {h}https://chat.deepseek.com/a/chat/s/cce82007-5ab0-4676-8823-653bf0003056{!h}  
 
+{file}stm32GPIO\Start\startup_stm32f10x_md.s@Description{!file}
+
 * (1). 初始化堆栈指针（SP）和程序计数器（PC）
     设置栈指针（SP）的初始值，指向栈顶地址（__initial_sp）。
 
