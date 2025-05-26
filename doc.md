@@ -2543,6 +2543,18 @@ VCC/VDD --->VDDA
 * (1). 初始化堆栈指针（SP）和程序计数器（PC）
     设置栈指针（SP）的初始值，指向栈顶地址（__initial_sp）。
 
+{file}stm32GPIO\Start\startup_stm32f10x_md.s@Stack{!file}
+
+栈的作用是用于局部变量，函数调用，函数形参等的开销，栈的大小不能超过内部SRAM 的大小。当程序较大时，需要修改栈的大小，不然可能会出现的HardFault的错误。
+
+第33行：表示开辟栈的大小为 0X00000400（1KB），EQU是伪指令，相当于C 中的 define。
+
+第35行：开辟一段可读可写数据空间，ARER 伪指令表示下面将开始定义一个代码段或者数据段。此处是定义数据段。ARER 后面的关键字表示这个段的属性。段名为STACK，可以任意命名；NOINIT 表示不初始化；READWRITE 表示可读可写，ALIGN=3，表示按照 8 字节对齐。
+
+第36行：SPACE 用于分配大小等于 Stack_Size连续内存空间，单位为字节。
+
+第37行： __initial_sp表示栈顶地址。栈是由高向低生长的。
+
     `在单片机（MCU）中，SP 是 Stack Pointer（栈指针） 的缩写，它是核心寄存器之一，用于管理栈（Stack）的内存地址`
 
 
@@ -2556,6 +2568,7 @@ VCC/VDD --->VDDA
         Heap_Size  EQU 0x200  ; 512B 堆空间
         栈用于局部变量和函数调用，堆用于动态内存分配（如 malloc）510。
 
+{file}stm32GPIO\Start\startup_stm32f10x_md.s@Heap{!file}
 * (3). 设置中断向量表
         定义中断向量表（__Vectors），存放异常和中断服务函数的入口地址。
 
