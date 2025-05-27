@@ -11,7 +11,11 @@ set github=%cd%
 set PATH=%github%\nodelib\nodejs_10.24;%github%\nodelib
 
 cd %github%\nodelib
-node c51_compile2.js --filelist %workspaceFolder%\%filelistparm% --file %filename%
+node c51_compile2.js --filelist %workspaceFolder%\%filelistparm% --file %filename% --workspace %workspaceFolder%
+
+
+@REM // "rpath":"D:/github/dsp_2025/c51",
+
 @REM --workspaceFolder %workspaceFolder% --entry test.c
 
 exit 0
