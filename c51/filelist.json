@@ -1,7 +1,6 @@
 {
     "KeilC51":"C:/Keil_v5/C51",
     "directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND",
-    "rpath":"D:/github/dsp/c51",
     "include": "./include", 
     "entry": "test1.c",
     "STARTUP": "STARTUP.A51",
@@ -13,3 +12,4 @@
         "files": ["utils.c"]
     }
 }
+
