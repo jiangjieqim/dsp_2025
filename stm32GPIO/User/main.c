@@ -50,7 +50,7 @@ int main(void)
 }
 */
 
-#define __DELAY__ 800000
+#define __DELAY__ 80000
 void GPIO_PC13_Init(void)
 {
     // 1. 启用 GPIOC 时钟

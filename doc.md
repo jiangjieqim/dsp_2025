@@ -1,5 +1,6 @@
 [STM32常见问题](#STM32常见问题)  
 [STM32-f103C8T6-启动流程](#STM32-f103C8T6-启动流程)  
+[GPIO操作流程](#GPIO操作流程)  
 
 DSP即Digital Signal Processing 数字信号处理  
 
@@ -2518,6 +2519,9 @@ VCC/VDD --->VDDA
 2.Crysital Frquency:8M  
 
 
+3. `Error: Flash Download failed - "Cortex-M3"`  
+
+
 # STM32-f103C8T6-启动流程
 
         DCD（Data Constant Definition）是ARM汇编指令
@@ -2596,3 +2600,109 @@ VCC/VDD --->VDDA
         Reset_Handler 执行后，会跳转到 C 库的 __main，完成运行时环境初始化（如全局变量、静态变量）。
 
         最终进入用户的 main() 函数，开始执行应用程序311。
+
+
+# GPIO操作流程
+
+1.使能GPIO时钟  
+```c
+// 使能GPIOA时钟（以APB2为例）
+RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+```
+2  GPIO寄存器结构  
+
+        每个GPIO端口有以下主要寄存器（以GPIOA为例）：
+
+        CRL (端口配置低寄存器)：控制PIN0-PIN7
+
+        CRH (端口配置高寄存器)：控制PIN8-PIN15
+
+        IDR (输入数据寄存器)：读取输入状态
+
+        ODR (输出数据寄存器)：设置输出状态
+
+        BSRR (位设置/清除寄存器)：原子操作设置/清除位
+
+        BRR (位清除寄存器)：清除位
+
+
+
+3  配置GPIO模式  
+
+配置输出模式（推挽输出，50MHz）
+
+```c
+// 配置PA0为推挽输出，最大速度50MHz
+GPIOA->CRL &= ~(0xF << (4*0));  // 清除原有配置
+GPIOA->CRL |= (0x3 << (4*0));   // 输出模式，最大速度50MHz
+GPIOA->CRL |= (0x0 << (4*0+2)); // 推挽输出模式
+```
+
+```c
+// 配置PA1为上拉输入
+GPIOA->CRL &= ~(0xF << (4*1));  // 清除原有配置
+GPIOA->CRL |= (0x8 << (4*1));   // 输入模式
+GPIOA->ODR |= (1 << 1);         // 使能上拉
+```
+
+4  GPIO操作函数  
+```c
+// 设置PA0为高电平
+GPIOA->BSRR = GPIO_BSRR_BS0;  // 原子操作，设置位0
+// 或使用ODR
+GPIOA->ODR |= GPIO_ODR_ODR0;
+```
+
+```c
+// 设置PA0为低电平
+GPIOA->BSRR = GPIO_BSRR_BR0;  // 原子操作，清除位0
+// 或使用BRR
+GPIOA->BRR = GPIO_BRR_BR0;
+// 或使用ODR
+GPIOA->ODR &= ~GPIO_ODR_ODR0;
+```
+
+```c
+// 读取PA1输入状态
+uint8_t state = (GPIOA->IDR & GPIO_IDR_IDR1) ? 1 : 0;
+
+// 翻转PA0输出状态
+GPIOA->ODR ^= GPIO_ODR_ODR0;
+```
+
+```c
+// 初始化PA5为推挽输出(50MHz)，控制LED
+void LED_Init(void)
+{
+    // 1. 使能GPIOA时钟
+    RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+    
+    // 2. 配置PA5为推挽输出，50MHz
+    GPIOA->CRL &= ~(0xF << (4*5));  // 清除PA5原有配置
+    GPIOA->CRL |= (0x3 << (4*5));   // 输出模式，50MHz
+    GPIOA->CRL |= (0x0 << (4*5+2)); // 推挽输出
+    
+    // 3. 初始化为低电平
+    GPIOA->BRR = GPIO_BRR_BR5;
+}
+
+// 翻转LED状态
+void LED_Toggle(void)
+{
+    GPIOA->ODR ^= GPIO_ODR_ODR5;
+}
+```
+
+
+注意事项
+直接操作寄存器时要注意位操作的正确性，避免影响其他位
+
+BSRR寄存器比单独操作ODR更高效，是原子操作
+
+配置输入模式时，上拉/下拉通过ODR寄存器控制
+
+对于复用功能，还需要配置AFIO寄存器
+
+不同STM32系列寄存器可能有差异，需参考对应参考手册
+
+{r}通过直接操作寄存器，可以实现对GPIO更高效、更精确的控制，特别适合对时序要求严格的场合。{!r}
