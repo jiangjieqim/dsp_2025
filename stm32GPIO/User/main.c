@@ -69,7 +69,7 @@ int main(void)
     {
         // 3. 切换 PC13 状态
         GPIOC->BSRR = GPIO_BSRR_BS13;  // 置高
-        SoftwareDelay(__DELAY__);            // 简单延时
+        SoftwareDelay(__DELAY__);      // 简单延时
         GPIOC->BSRR = GPIO_BSRR_BR13;  // 置低
         SoftwareDelay(__DELAY__);
     }
