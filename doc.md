@@ -2697,9 +2697,10 @@ BSRR寄存器比单独操作ODR更高效，是原子操作
 
 
 # STLink
+
 1 Options for Target 'Target1':Use ST-Link Debugger / Settings  
 1.1 Output : selected Create Hex File  
 2 Flash Download --> selected 'Reset And Run'  
-
+![](img/37.png)  
 https://zhuanlan.zhihu.com/p/7495454764  
 
