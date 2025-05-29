@@ -1,6 +1,7 @@
 [STM32常见问题](#STM32常见问题)  
 [STM32-f103C8T6-启动流程](#STM32-f103C8T6-启动流程)  
 [GPIO操作流程](#GPIO操作流程)  
+[STLink](#STLink)  
 
 DSP即Digital Signal Processing 数字信号处理  
 
@@ -2612,20 +2613,12 @@ RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
 2  GPIO寄存器结构  
 
         每个GPIO端口有以下主要寄存器（以GPIOA为例）：
-
         CRL (端口配置低寄存器)：控制PIN0-PIN7
-
         CRH (端口配置高寄存器)：控制PIN8-PIN15
-
         IDR (输入数据寄存器)：读取输入状态
-
         ODR (输出数据寄存器)：设置输出状态
-
         BSRR (位设置/清除寄存器)：原子操作设置/清除位
-
         BRR (位清除寄存器)：清除位
-
-
 
 3  配置GPIO模式  
 
@@ -2695,14 +2688,18 @@ void LED_Toggle(void)
 
 
 注意事项
-直接操作寄存器时要注意位操作的正确性，避免影响其他位
+直接操作寄存器时要注意位操作的正确性，避免影响其他位  
+BSRR寄存器比单独操作ODR更高效，是原子操作  
+配置输入模式时，上拉/下拉通过ODR寄存器控制  
+对于复用功能，还需要配置AFIO寄存器  
+不同STM32系列寄存器可能有差异，需参考对应参考手册  
+{r}通过直接操作寄存器，可以实现对GPIO更高效、更精确的控制，特别适合对时序要求严格的场合。{!r}  
 
-BSRR寄存器比单独操作ODR更高效，是原子操作
 
-配置输入模式时，上拉/下拉通过ODR寄存器控制
+# STLink
+1 Options for Target 'Target1':Use ST-Link Debugger / Settings  
+1.1 Output : selected Create Hex File  
+2 Flash Download --> selected 'Reset And Run'  
 
-对于复用功能，还需要配置AFIO寄存器
+https://zhuanlan.zhihu.com/p/7495454764  
 
-不同STM32系列寄存器可能有差异，需参考对应参考手册
-
-{r}通过直接操作寄存器，可以实现对GPIO更高效、更精确的控制，特别适合对时序要求严格的场合。{!r}
