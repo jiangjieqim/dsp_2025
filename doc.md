@@ -2,7 +2,8 @@
 [STM32-f103C8T6-启动流程](#STM32-f103C8T6-启动流程)  
 [GPIO操作流程](#GPIO操作流程)  
 [STLink](#STLink)  
-[RCC](#RCC)  
+[RCC](#RCC)`Reset and Clock Control`   
+
 
 DSP即Digital Signal Processing 数字信号处理  
 
@@ -14,6 +15,9 @@ DSP即Digital Signal Processing 数字信号处理
 {c}#ff00ff STC89C51RC{!c}{h2}icpdf/STC89C51RC-RD.pdf{!h2}  
 {c}#ff00ff STC89CXX{!c}{h2}icpdf/STC89CXX.pdf{!h2}  
 {c}#ff00ff STM32F103X6{!c}{h2}icpdf/STM32F103X6.pdf{!h2}  
+{c}#ff00ff 89C51{!c}{h2}icpdf/89C51.pdf{!h2}  
+
+[89c51硬件架构](#89c51硬件架构)  
 
 * [寄存器Mapping](#寄存器Mapping)`寄存器的地址映射`  
 * [TCON寄存器](#TCON寄存器)`定时器相关`  
@@ -58,7 +62,7 @@ DSP即Digital Signal Processing 数字信号处理
 
 * [CH340烧录防倒灌电路](#CH340烧录防倒灌电路)  
 
-[STARTUP.A51文件分析](#STARTUP.A51文件分析)  
+[STARTUP.A51文件分析](#STARTUP.A51文件分析)启动流程  
 [电阻](#电阻)  
 [上拉电阻](#上拉电阻)  
 [引脚说明](#引脚说明)`STC89C52引脚说明`  
@@ -133,6 +137,13 @@ DSP即Digital Signal Processing 数字信号处理
 
 * `40(40MHz) I(工业级别-40C~+85C) PDIP 40(封装类型)`  
 ![](img/82.jpg)  
+
+
+# 89c51硬件架构
+![](img/91.jpg)  
+![](img/92.jpg)  
+
+
 
 # 寄存器Mapping
 ![](img/65.jpg)  
@@ -1078,7 +1089,8 @@ https://blog.csdn.net/dldw8816/article/details/42266193
 初始化8051单片机的硬件堆栈指针
 将系统控制权转交给初始化全局变量的代码，如果没有被初始化的全局变量则转交给C程序文件中的main函数。
 STARTUP.A51启动文件中定义了一些常量，修改这些常量可以控制单片机复位时执行的动作：
-        1、IDATALEN
+
+1、IDATALEN
 
 指定idata区需要清零的字节数。默认值为80H，这是由于8051系列单片机都包含至少128字节内部ram。对于8052系列单片机或者其他系列具有256字节内部ram的，可以将此值改为100H。
 
@@ -2543,9 +2555,10 @@ VCC/VDD --->VDDA
         +-------+    +----------+----------+    +---------------------+----+----         +------------+       +-------+
                                            ^
                                            |
-        +---------------------------------------------------------------------------------------+
-        |startup_stm32f10x_md.s     (STM32F10x Medium Density Devices vector table for MDK-ARM) |
-        +---------------------------------------------------------------------------------------+
+        +----------------------------+
+        |startup_stm32f10x_md.s      |
+        +----------------------------+
+        (STM32F10x Medium Density Devices vector table for MDK-ARM)
 
 
         stm32f10x.h
