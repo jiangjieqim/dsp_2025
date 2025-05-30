@@ -140,7 +140,70 @@ DSP即Digital Signal Processing 数字信号处理
 
 
 # 89c51硬件架构
-![](img/91.jpg)  
+![](img/91.jpg)
+
+
+        `TMP1`		RAM (如 30H)	暂存累加器、中间计算  
+        `TMP2`		RAM (如 31H)	辅助计算、数据交换  
+
+        `RAM ADDR REGISTER`: RAM地址锁存器  
+        `PORT0 LATCH`      : 端口0锁存器  
+        `PORT0 DRIVERS`    : 端口0驱动  
+        `PORT2 LATCH`      : 端口2锁存器  
+        `PORT2 DRIVERS`    : 端口2驱动  
+
+        `ACC`             :(Accumulator，累加器）是一个核心的8位寄存器，用于完成大部分算术逻辑运算
+                        （如加减乘除、移位、逻辑操作等），以及数据传输操作。它是单片机中最繁忙的寄存器之一，与许多指令直接关联
+
+        `STACK Pointer`   :堆栈指针
+
+        `ALU`             :（Arithmetic Logic Unit，算术逻辑单元）
+                        是计算机和微处理器（包括单片机）的核心部件之一，负责执行所有算
+                        术运算（如加减乘除）和逻辑运算（如与、或、非、移位等）。它是CPU
+                        的"计算引擎"，直接影响处理器的性能。
+
+                        ---------------ALU的工作原理--------------- 
+
+                        输入：从寄存器（如ACC）、内存或指令中获取操作数。
+                        处理：根据控制信号（由指令译码器生成）选择特定运算。
+                        输出：将结果存回寄存器（如ACC）或内存，同时更新状态寄存器（Flags）
+
+                                   +---------+
+                        操作数A -->|         |
+                                   |   ALU   | --> 结果（存到ACC等）
+                        操作数B -->|         |
+                                   +----+----+
+                                        |
+                                        v
+                                状态寄存器（Flags）:
+                                - 进位（Carry）
+                                - 零（Zero）
+                                - 溢出（Overflow）
+                                - 符号（Sign）等
+
+        `SFRs TIMERS`             :（Special Function Registers，特殊功能寄存器） 和 TIMERS（定时器）二者紧密协作实现精准定时、计数、PWM生成等功能。
+
+        `PROGRAM ADDRESS REGISTER`:程序地址寄存器  
+
+        `BUFFER`                  :缓存器
+
+        `PC INCREMENTER`          :程序地址指令累加器
+
+        `PROGRAM COUNTER`         :程序地址寄存器
+
+        `DPTRS MULIPLE`           :数据指针寄存器  
+
+        `TIMING AND CONTROL`      :定时器和控制单元
+
+        `INSTRUSTION REGISTER`    :指令寄存器
+
+        `OSCILLATOR`              :晶振
+
+        `PD`                      : 掉电模式（Power Down）触发信号
+
+
+
+
 ![](img/92.jpg)  
 
 # 寄存器Mapping
