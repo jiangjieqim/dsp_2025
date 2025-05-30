@@ -199,7 +199,7 @@ DSP即Digital Signal Processing 数字信号处理
 
         `OSCILLATOR`              :晶振
 
-        `PD`                      : 掉电模式（Power Down）触发信号
+        `PD`                      :掉电模式（Power Down）触发信号
 
 
 
