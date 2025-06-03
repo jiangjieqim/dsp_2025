@@ -9,7 +9,7 @@ DSP即Digital Signal Processing 数字信号处理
 
 [资料查询相关](#资料查询相关)  
 
-[最小系统](#最小系统)  
+[最小系统电路图](#最小系统电路图)  
 `复位电路增加电容的原因`  
 
 {c}#ff00ff STC89C51RC{!c}{h2}icpdf/STC89C51RC-RD.pdf{!h2}  
@@ -62,7 +62,7 @@ DSP即Digital Signal Processing 数字信号处理
 
 * [CH340烧录防倒灌电路](#CH340烧录防倒灌电路)  
 
-[STARTUP.A51文件分析](#STARTUP.A51文件分析)启动流程  
+[STARTUP.A51文件分析](#STARTUP.A51文件分析){r}启动流程{!r}  
 [电阻](#电阻)  
 [上拉电阻](#上拉电阻)  
 [引脚说明](#引脚说明)`STC89C52引脚说明`  
@@ -108,8 +108,9 @@ DSP即Digital Signal Processing 数字信号处理
 电学理论  
 {h}:8001/github/jjqmdlib/entry/doc.html?file=github\jdoc\dsp_electron.md{!h}  
 
-# 最小系统
+# 最小系统电路图
 ![](img/c51_mini.SVG)  
+![](img/93.jpg)  
 
 {c}#ff00ff 复位电路增加电容的原因{!c}  
 
