@@ -99,6 +99,8 @@
 [代码范例](#代码范例)  
 [Keil常见编译错误](#Keil常见编译错误)  
 
+[stc32g12k128](#stc32g12k128)  
+
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
 
@@ -3004,3 +3006,8 @@ https://zhuanlan.zhihu.com/p/7495454764
 
 RCC (Reset and Clock Control)
 
+
+# stc32g12k128
+`https://www.stcmicro.com/cn/stc/stc32g12k128.html`  
+
+32位8051内核，128KB Flash，12KB SRAM  
