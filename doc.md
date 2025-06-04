@@ -4,13 +4,12 @@
 [STLink](#STLink)  
 [RCC](#RCC)`Reset and Clock Control`   
 
-
-DSP即Digital Signal Processing 数字信号处理  
-
 [资料查询相关](#资料查询相关)  
 
 [最小系统电路图](#最小系统电路图)  
-`复位电路增加电容的原因`  
++[复位电路增加电容的原因](#复位电路增加电容的原因)  
+
+[STC89C51RCRD系列单片机命名规则](#STC89C51RCRD系列单片机命名规则)  
 
 {c}#ff00ff STC89C51RC{!c}{h2}icpdf/STC89C51RC-RD.pdf{!h2}  
 {c}#ff00ff STC89CXX{!c}{h2}icpdf/STC89CXX.pdf{!h2}  
@@ -18,17 +17,15 @@ DSP即Digital Signal Processing 数字信号处理
 {c}#ff00ff 89C51{!c}{h2}icpdf/89C51.pdf{!h2}  
 
 [89c51硬件架构](#89c51硬件架构)  
++[寄存器Mapping](#寄存器Mapping)`寄存器的地址映射`  
++[中断](#中断)    
+ --[TCON寄存器](#TCON寄存器)`定时器相关`   
+ --[IE寄存器](#IE寄存器)`中断使能寄存器`  
 
-* [寄存器Mapping](#寄存器Mapping)`寄存器的地址映射`  
-* [TCON寄存器](#TCON寄存器)`定时器相关`  
-* [中断](#中断)`中断寄存器 中断优先级`  
-  * TCON寄存器  
-  * IE寄存器  
++[定时器](#定时器)`TMOD寄存器的使用`  
++[UART](#UART)`串口`  
 
-* [定时器](#定时器)`TMOD寄存器的使用`  
-* [UART](#UART)`串口`  
-
-* {r}▲{!r}[51引脚示意图](#51引脚示意图)`STC89C52RC-DIP-40`  
++{r}▲{!r}[51引脚示意图](#51引脚示意图)`STC89C52RC-DIP-40`  
 
 [电容](#电容)  
 [模数转换](#模数转换)  
@@ -112,7 +109,7 @@ DSP即Digital Signal Processing 数字信号处理
 ![](img/c51_mini.SVG)  
 ![](img/93.jpg)  
 
-{c}#ff00ff 复位电路增加电容的原因{!c}  
+# 复位电路增加电容的原因  
 
 作用:  
 
@@ -132,12 +129,14 @@ DSP即Digital Signal Processing 数字信号处理
 
 ![](img/62.jpg)  
 
-{c}#ff00ff STC89C51RC/RD+系列单片机命名规则{!c}  
+# STC89C51RCRD系列单片机命名规则  
 
 40IPDIP40  
 
 * `40(40MHz) I(工业级别-40C~+85C) PDIP 40(封装类型)`  
 ![](img/82.jpg)  
+
+89C52RC: 12T/6T 5.5V-3.8V 8KB RAM(1280B) 40MHz 
 
 
 # 89c51硬件架构
@@ -220,7 +219,8 @@ DSP即Digital Signal Processing 数字信号处理
         … BANK 31 B0:0000 – B0:FFFF
         B31:0000 – B31:FFFF - Code Banks for expanding the program code space to 32 x 64KB ROM.
 
-
+# 中断
+![](img/27.png) 
 
 # TCON寄存器
 ![](img/24.png)  
@@ -244,10 +244,8 @@ IT0：外部中断0触发方式控制位。IT0=0时，外部中断0为低电平�
 采用低电平触发方式时，外部中断源（输入到INT0）必须保持低电平有效，直到该中断被CPU响应，同时在该中断服务程序执行完之前，  
 外部中断源必须被清除（P3.2要变高），否则将产生另一次中断。当IT0=1时，则外部中断0(INT0)端口由“1”→“0”下降沿跳变，激活中断请求标志位IE0 ，向主机请求中断处理。  
 
-# 中断
-![](img/27.png)  
-
-{r}TCON寄存器{!r}  
+ 
+{r}TCON寄存器说明{!r}  
 
 `TCON寄存器是定时器控制寄存器（Timer Control Register）的简称，用于控制定时器/计数器的启动、停止以及外部中断的管理。TCON寄存器在单片机中占据一个字节，共有8个位，每个位都有特定的功能。`  
 
@@ -270,7 +268,7 @@ IT0：外部中断0触发方式控制位。IT0=0时，外部中断0为低电平�
 
 5、RXD 和 TXD： 对应的是 P3.0 和 P3.1 口的附加功能，RI（SCON.0）或 TI （SCON.1），串行口中断请求标志。当串行口接收完一帧串行数据时置位 RI 或 当串行口发送完一帧串行数据时置位 TI，向 CPU 申请。  
 
-{r}IE寄存器{!r}  
+# IE寄存器  
 
 `IE 中断允许控制寄存器，电工学用语。用于控制所有中断源的开放或禁止，以及每个中断源是否被允许。`  
 
@@ -1082,11 +1080,7 @@ CH340 插入电脑之后会在设备管理器端口列表中显示`USB-SERIAL CH
 
 ![](img/u60.jpg)  
 
-烧录的目标文件`D:\github\dsp\c51\test.hex`
-
-![](img/38.jpg)  
-![](img/39.jpg)  
-
+烧录的目标文件`c51\test.hex`  
 
  `89C52RC P10`(RXD:串行口输入端) 接 `CH230的 TXD`  
  `89C52RC P11`(TXD:串行口输出端) 接 `CH230的 RXD`  
@@ -1744,6 +1738,9 @@ void main() {
 }
 ```
 # 术语
+
+DSP即Digital Signal Processing 数字信号处理  
+
 
 # 数据手册常见参数  
 
