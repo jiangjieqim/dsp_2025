@@ -149,7 +149,7 @@
                         MUL（乘法）、DIV（除法）等复杂指令可能需要 4个机器周期（即48个时钟周期）。
                         计算执行时间
                         如果使用 12MHz 晶振：
-                        时钟周期 T = \frac{1}{12MHz} = 83.33nsT= 12MHz/1=83.33ns
+                        时钟周期 T = 12MHz/1=83.33ns
                         机器周期 = 12T = 1μs
                         NOP 指令执行时间 = 1机器周期 = 1μs
 
@@ -735,7 +735,7 @@ Terminals Mode中的 DEFAULT用于设置标签
 
 示波器`OSCILLOSCOPE MODEL`
         重置示窗口:`Debug/Reset Debug Pops Windows`  
-        设置鼠标拾取方波线 TRIGCURSORS:TRUE  
+        设置鼠标拾取方波线 {r}TRIGCURSORS:TRUE{!r}    
         右键print输出pdf或者xps(setup设置输出配置)  
         Setup(Black and White黑白输出 Center on Zoom 居中缩放)  
         鼠标中间缩放视图  
