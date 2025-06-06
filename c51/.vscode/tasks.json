@@ -78,9 +78,10 @@
             "problemMatcher": []
         },
         {
-            "label": "c51_compile oled",
+            "label": "c51 compile current ${file}",
             "type": "shell",
-            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json oled.c",
+            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json ${fileBasename}",
+            // "command":"echo ${file}",
             "problemMatcher": []
         },
 
