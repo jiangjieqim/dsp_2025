@@ -167,7 +167,7 @@
         
         8KB             Flash程序存储器
 
-        SRAM(1280B)     Static Random-Access Memory
+        SRAM(1280 bytes) Static Random-Access Memory
                         "Static"（静态）：只要保持供电，数据就不会丢失（无需刷新）。
                         "Random-Access"（随机存取）：可以按任意顺序读写数据，访问时间固定（与存储位置无关）。
                         "Memory"（存储器）：用于临时存储CPU运行时的数据和指令。
@@ -1792,6 +1792,24 @@ void main() {
     }
 }
 ```
+
+        关键字	说明
+        bit	定义单比特变量（1-bit），存储在 8051 的可位寻址区（如 20H~2FH）。
+        sbit	定义特殊功能寄存器（SFR）的单个位，例如：sbit LED = P1^0;
+        sfr	定义 8 位特殊功能寄存器（SFR），例如：sfr P0 = 0x80;
+        sfr16	定义 16 位特殊功能寄存器（如定时器 T0/T1）。
+        data	将变量存储在 8051 的 内部 RAM（0x00~0x7F），访问速度快。
+        idata	变量存储在 间接寻址的 RAM（0x80~0xFF），速度较慢。
+        bdata	变量存储在 可位寻址的 RAM（0x20~0x2F），支持位操作。
+        xdata	变量存储在 外部 RAM（64KB），访问需用 MOVX 指令。
+        code	将常量或数组存储在 程序存储器（Flash ROM），例如：code char table[] = {…};
+        interrupt	定义中断服务函数，例如：void Timer0_ISR() interrupt 1
+        using	指定中断服务函数使用的寄存器组（0~3），例如：interrupt 1 using 1
+        reentrant	声明函数为可重入函数（支持递归调用）。
+        _at_	指定变量的绝对地址，例如：int x _at_ 0x30;
+
+
+
 # 术语
 
 DSP即Digital Signal Processing 数字信号处理  
@@ -2559,7 +2577,7 @@ ms pulse) is middle, "90" (~2 ms pulse) is all the way to the right,
 {file}img/example/led.c{!file}  
 
 # Keil常见编译错误
-(1)
+(1)----------------------------------------------------------
 
         +---------------------------------+
         | *** ERROR L121: IMPROPER FIXUP  |
@@ -2583,6 +2601,36 @@ Command line参数为
         This directive selects the LARGE memory model where all variables and local data segments of functions and procedures reside (as defined) in the external data memory of the 8051 system. Up to 64 KBytes of external data memory may be accessed. This, however, requires the long and therefore inefficient form of data access through the data pointer (DPTR).
 
         Regardless of memory model type, you may declare variables in any of the 8051 memory ranges. However, placing frequently-used variables (such as loop counters and array indices) in internal data memory significantly improves system performance.
+
+(2)----------------------------------------------------------
+```
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA
+    SEGMENT: _DATA_GROUP_
+    LENGTH:  0008H
+
+Program Size: data=130.0 xdata=0 code=841
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  1 ERROR(S)
+
+```
+`The specified segment cannot be located at the specified address space. The segment is ignored.`  
+
+        错误信息解析
+
+        SPACE: DATA
+        表示问题出在 内部RAM（DATA区）（标准8051只有128字节，52系列有256字节）。
+
+        SEGMENT: _DATA_GROUP_
+        表示溢出来自编译器自动分配的 数据段（存放全局变量、静态变量等）。
+
+        LENGTH: 0008H
+        表示超出 8字节（0008H = 8），即你的程序需要 128 + 8 = 136字节，但8051的DATA区只有128字节。
+
+        Program Size: data=130.0 xdata=0 code=841
+        data=130.0：内部RAM使用了130字节（超出128字节限制）。
+        xdata=0：未使用外部RAM（XRAM）。
+        code=841：代码占用841字节（Flash/ROM空间，通常不是问题）。
+
 
 
 
