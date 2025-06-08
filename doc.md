@@ -99,6 +99,7 @@
 [Keil常见编译错误](#Keil常见编译错误)  
 
 [stc32g12k128](#stc32g12k128)  
+[0.96寸oled](#0.96寸oled)  
 
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
@@ -3087,3 +3088,6 @@ RCC (Reset and Clock Control)
 `https://www.stcmicro.com/cn/stc/stc32g12k128.html`  
 
 32位8051内核，128KB Flash，12KB SRAM  
+
+# 0.96寸oled
+![](img/94.jpg)  
