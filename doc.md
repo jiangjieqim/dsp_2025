@@ -3107,7 +3107,7 @@ RCC (Reset and Clock Control)
         VCC(3.3v)|   +-----------+
               PB8|---|SCL        |
               PB9|---|SDA        |
-            -----+   |VCC(3.3v)  |
+      -----------+   |VCC(3.3v)  |
                      |GND        |
                      +-----------+
 
