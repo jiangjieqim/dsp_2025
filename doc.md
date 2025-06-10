@@ -3101,11 +3101,15 @@ RCC (Reset and Clock Control)
 # 0.96寸oled
 ![](img/94.jpg)  
 ![](img/95.jpg)  
-
-GND---电源地  
-VCC---3.3v  
-PB8---SCL  
-PB9---SDA  
+      
+      ---MCU-----+
+              GND|
+        VCC(3.3v)|   +-----------+
+              PB8|---|SCL        |
+              PB9|---|SDA        |
+            -----+   |VCC(3.3v)  |
+                     |GND        |
+                     +-----------+
 
 ![](img/97.jpg)  
 
