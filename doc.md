@@ -3102,9 +3102,10 @@ RCC (Reset and Clock Control)
 ![](img/94.jpg)  
 ![](img/95.jpg)  
 
-GND 电源地  
-VCC 3-5.5v
-
+GND---电源地  
+VCC---3.3v  
+PB8---SCL  
+PB9---SDA  
 
 ![](img/97.jpg)  
 
