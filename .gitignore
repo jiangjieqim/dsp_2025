@@ -36,4 +36,14 @@
 /stm32GPIO/*.workspace
 /proteus1/Project Backups
 /stm32GPIO/Objects
+
+
+/stm32/4-1-OLED/Listings
+/stm32/4-1-OLED/proteus/*.pdsbak
+/stm32/4-1-OLED/proteus/*.workspace
+/stm32/4-1-OLED/.vscode/settings.json
+/stm32/4-1-OLED/DebugConfig
+/stm32/4-1-OLED/Objects
+
+
 /stm32GPIO/Target 1.BAT

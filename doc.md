@@ -3104,3 +3104,7 @@ RCC (Reset and Clock Control)
 
 GND 电源地  
 VCC 3-5.5v
+
+
+![](img/97.jpg)  
+
