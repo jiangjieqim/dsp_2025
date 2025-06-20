@@ -41,7 +41,7 @@
 
 [Proteus软件](#Proteus软件)  
 
-* [元件编辑器面板](#元件编辑器面板)`EditComponent`  
+* [元件编辑面板](#元件编辑面板)`EditComponent`  
 * [示波器](#示波器)  
 * [自定义proteus元件](#自定义proteus元件)  
 
@@ -667,7 +667,8 @@ BJT 的全称是双极性结型晶体管（Bipolar Junction Transistor），国�
 Vceo Collector-Emitter Voltage  40V      {r}Vce最大承受电压{!r}  
 Ic collector current(DC)        800mA    {r}可通过最大电流{!r}  
 hFE DC current gain {r}当前增益放大倍数{!r}  
-# Proteus软件  
+# Proteus软件 
+* +/- 正/反向旋转元件  
 * Component Mode 组件模式  
 * Pick Derices --->添加元件组件
 
@@ -772,9 +773,9 @@ Frequency:频率 50
 功率：220，频率：50hz  
 
 # 自定义proteus元件
+{h}https://blog.51cto.com/u_16099277/10255698{!h}  
 1 2D Graphics Box Mode(组件)  
 2 COMPONENT() PIN(管脚)  
-
 
 # 常见问题
 
