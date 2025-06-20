@@ -5,7 +5,7 @@
 // OLED引脚定义（根据实际接线修改）
 sbit OLED_SCL  =  P0 ^ 1;  // I2C时钟线
 sbit OLED_SDA  =  P0 ^ 0;  // I2C数据线
-sbit LED = P1^0;
+// sbit LED = P1^0;
 
 // I2C地址（0x78或0x3C，根据OLED模块决定）
 #define OLED_ADDRESS  0x78
@@ -105,7 +105,7 @@ void OLED_Clear() {
 
 // 初始化OLED
 void OLED_Init() {
-    Delay_ms(500);  // 等待OLED电源稳定
+    //Delay_ms(500);  // 等待OLED电源稳定
     _nop_();
     OLED_Write(OLED_CMD, 0xAE);  // 关闭显示
     OLED_Write(OLED_CMD, 0xD5);  // 设置时钟分频
@@ -271,26 +271,27 @@ void OLED_ShowString(unsigned char x, unsigned char y, char *str) {
     }
 }
 
-void playLed(){
-    int __DELAY__ = 256;
-    LED = 0;    
-    Delay_us(__DELAY__); 
-    LED = 1;   
-    Delay_us(__DELAY__); 
-    LED = 0;    
-    Delay_us(__DELAY__); 
-    LED = 1;   
-    Delay_us(__DELAY__); 
-    LED = 0;    
-    Delay_us(__DELAY__); 
-    LED = 1;   
-    Delay_us(__DELAY__); 
-}
+// void playLed(){
+//     int __DELAY__ = 256;
+//     LED = 0;    
+//     Delay_us(__DELAY__); 
+//     LED = 1;   
+//     Delay_us(__DELAY__); 
+//     LED = 0;    
+//     Delay_us(__DELAY__); 
+//     LED = 1;   
+//     Delay_us(__DELAY__); 
+//     LED = 0;    
+//     Delay_us(__DELAY__); 
+//     LED = 1;   
+//     Delay_us(__DELAY__); 
+// }
 void oled_test(){
     OLED_Init();                  // 初始化OLED
-    OLED_ShowString(0, 0, "abcde");
-    OLED_ShowString(0, 1, "fbcdk");
-    OLED_ShowString(0, 3, "abcde");
+    OLED_Clear();                // 清屏
+    OLED_ShowString(0, 0, "abcdeabcdeabcd &+eaABCbcdeabcdeabABCABCABCcdeabcdeabcde");
+    // OLED_ShowString(0, 1, "fbcdk");
+    // OLED_ShowString(0, 3, "E ABC+");
 }
 /*
 */
@@ -301,14 +302,16 @@ void main() {
     while (1) {
         // playLed();
         // Delay_us(1000);
-        OLED_Clear();                // 清屏
-        // OLED_ShowString(0, 0, "f");
-        a = a % 2;
-        a++;
-        if(a == 1){
-            OLED_ShowString(0, 1, "f#");
-        }else{
-            OLED_ShowString(0, 2, "a2");
-        }
+        
+        // OLED_Clear();
+        // // OLED_ShowString(0, 0, "f");
+        // a = a % 2;
+        // a++;
+        // if(a == 1){
+        //     OLED_ShowString(0, 1, "f#");
+        // }else{
+        //     OLED_ShowString(0, 2, "a2");
+        // }
+        
     }
 }
