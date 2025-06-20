@@ -35,12 +35,15 @@
 
 [晶振](#晶振)  
 [二极管](#二极管)`常用二极管列表`  
-[三极管](#三极管)  
+[三极管](#三极管)
+
+------------------------------------------
+
 [Proteus软件](#Proteus软件)  
 
-* [EditComponent](#EditComponent)`元件编辑器面板`  
-
+* [元件编辑器面板](#元件编辑器面板)`EditComponent`  
 * [示波器](#示波器)  
+* [自定义proteus元件](#自定义proteus元件)  
 
 [常见问题](#常见问题)  
 [Keil](#Keil)  
@@ -726,7 +729,7 @@ https://blog.csdn.net/jibhikk/article/details/127642468
 
 Terminals Mode中的 DEFAULT用于设置标签
 
-# EditComponent
+# 元件编辑面板
 `Model Type` Analog模拟型号 Digtal数字信号  
 
 `Forward Voltage` 正向电压:二极管在正向偏置(当外界又正向电压偏置时,引起正向电流的行为)时,使电流通过时的最小电压  
@@ -767,6 +770,10 @@ VSINE:交流电源
 Amplitude:振幅 311(220*Math.sqrt(2))  
 Frequency:频率 50  
 功率：220，频率：50hz  
+
+# 自定义proteus元件
+1 2D Graphics Box Mode(组件)  
+2 COMPONENT() PIN(管脚)  
 
 
 # 常见问题
@@ -2256,8 +2263,8 @@ e:E跳变到低电平,释放DB数据端口使用权
 
 # 74HC595
 {h}https://blog.csdn.net/qq_73988401/article/details/131616361{!h}  
-![](img/20.png)  
-![](img/21.png)  
+![](img/20.jpg)  
+![](img/21.jpg)  
 
 serial data input 连续数据输入  
 implies that the output is in a high-impedance  输出高阻态(悬空状态,放弃对输出端电路的控制)  
