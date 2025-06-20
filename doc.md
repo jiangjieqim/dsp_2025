@@ -101,6 +101,9 @@
 [stc32g12k128](#stc32g12k128)  
 [0.96寸oled](#0.96寸oled)  
 
+[Fritzing](#Fritzing)  
+
+
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
 
@@ -3111,5 +3114,11 @@ RCC (Reset and Clock Control)
                      |GND        |
                      +-----------+
 
-![](img/97.jpg)  
+![](img/97.jpg) 
+
+# Fritzing
+最佳应用场景:`面包板原型可视化`
+	
+元件搜索  
+Breadboard:面包板  
 
