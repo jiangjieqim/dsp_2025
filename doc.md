@@ -2658,6 +2658,18 @@ LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  1 ERROR(S)
 
 
 # STM32常见问题
+
+* STM32F103C8T6
+
+        内核：ARM Cortex-M3，最高主频 72MHz，支持单周期乘法和硬件除法。
+        Flash存储器：64KB（实际部分型号可能解锁至128KB，需验证）。
+        SRAM：20KB（16KB + 4KB核心专用）。
+        供电电压：2.0V ~ 3.6V（典型3.3V）。
+        封装：LQFP48（7x7mm，引脚间距0.5mm）。
+
+
+
+
 {h}https://jiangxiekeji.com/problem.html{!h}
 
 {r}术语{!r}  
