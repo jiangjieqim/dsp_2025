@@ -102,7 +102,7 @@
 [Keil常见编译错误](#Keil常见编译错误)  
 
 [stc32g12k128](#stc32g12k128)  
-[0.96寸oled](#0.96寸oled)  
+[0.96寸oled](#0.96寸oled)`ssd1306`  
 
 [Fritzing](#Fritzing)  
 
@@ -3112,6 +3112,17 @@ RCC (Reset and Clock Control)
 32位8051内核，128KB Flash，12KB SRAM  
 
 # 0.96寸oled
+手册{h2}icpdf/0.96OLED_SSD1306.pdf{!h2}
+
+* Vdd = 1.65V to 3.3V for IC logic  
+直接连接3.3V系统：安全
+连接5V系统：必须使用电平转换器
+
+* Vcc = 7V to 15V for Panel driving(由内部电荷泵生成)  
+
+
+
+
 ![](img/94.jpg)  
 ![](img/95.jpg)  
       
