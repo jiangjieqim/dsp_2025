@@ -3168,3 +3168,7 @@ Breadboard:面包板
         +----+------+----+-----+
 
 ![](img/98.jpg)
+
+https://blog.csdn.net/dhdhshshw2/article/details/148057409
+
+https://www.bilibili.com/video/BV1Dk4y137wS/?share_source=copy_web&vd_source=afb85075fe86be6a25e42df05c8db829
