@@ -3142,19 +3142,22 @@ RCC (Reset and Clock Control)
 * Vcc = 7V to 15V for Panel driving(由内部电荷泵生成)  
 
 
-
-
 ![](img/94.jpg)  
 ![](img/95.jpg)  
       
-      ---MCU-----+
-              GND|
-        VCC(3.3v)|   +-----------+
-              PB8|---|SCL        |
-              PB9|---|SDA        |
-      -----------+   |VCC(3.3v)  |
-                     |GND        |
-                     +-----------+
+`STM32F103C8T6 驱动 0.96寸OLED（SSD1306） 的 I2C引脚连接示意图`  
+
+           +---------------+
+           | STM32F103C8T6 |
+           |            GND|   
+           |               |   +-----------+     
+           |      VCC(3.3v)|   |0.96" OLED | (SSD1306, I2C接口)
+           |            PB8|---|SCL        |
+           |            PB9|---|SDA        |
+           +---------------+   |VCC(3.3v)  |
+                               |GND        |
+                               +-----------+
+
 
 ![](img/97.jpg) 
 
@@ -3173,7 +3176,8 @@ RCC (Reset and Clock Control)
         DATA: 数据/命令内容
         P: 停止条件
 
-        
+
+
 
 # Fritzing
 最佳应用场景:`面包板原型可视化`
