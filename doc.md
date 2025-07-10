@@ -3219,3 +3219,7 @@ Breadboard:面包板
 https://blog.csdn.net/dhdhshshw2/article/details/148057409
 
 https://www.bilibili.com/video/BV1Dk4y137wS/?share_source=copy_web&vd_source=afb85075fe86be6a25e42df05c8db829
+
+
+multisim13.0汉化破解版  
+`https://www.falstad.com/circuit/`  
