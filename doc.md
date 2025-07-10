@@ -3224,3 +3224,6 @@ https://www.bilibili.com/video/BV1Dk4y137wS/?share_source=copy_web&vd_source=afb
 multisim13.0汉化破解版  
 `https://www.falstad.com/circuit/`  
 `https://www.falstad.com/circuit/circuitjs.html`  
+
+离线版本  
+`https://www.falstad.com/circuit/offline/`  
