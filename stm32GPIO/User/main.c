@@ -64,7 +64,7 @@ void GPIO_PC13_Init(void)
 int main(void)
 {
     GPIO_PC13_Init();
-    
+     GPIOC->BSRR = GPIO_BSRR_BS13; 
     while(1)
     {
         // 3. 切换 PC13 状态

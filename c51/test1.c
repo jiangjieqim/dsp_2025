@@ -5,7 +5,7 @@
 */
 #include <reg51.h>
 sbit LED = P0^0;
-#define __DELAY__ 250
+#define __DELAY__ 1000
 static void 
 delay(unsigned int time) {
     unsigned int i, j;

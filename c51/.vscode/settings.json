@@ -14,6 +14,7 @@
       "i2c.h": "c",
       "ios": "c",
       "ostream": "c",
-      "REG52.H": "cpp"
+      "REG52.H": "cpp",
+      "ABSACC.H": "cpp"
    }
 }

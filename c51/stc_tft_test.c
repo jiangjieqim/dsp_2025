@@ -4,11 +4,12 @@
 #include <reg51.h>
 #include <absacc.h>
 // #include "cstdlib.h"
-/*************** ÓÃ»§¶¨Òå²ÎÊı *****************************/
+/*************** ç”¨æˆ·å®šä¹‰å‚æ•° *****************************/
 #define uchar unsigned char
 #define uint unsigned int
 
 /**********************************************************/
+//https://blog.csdn.net/weixin_44116175/article/details/117842513
 
 sbit	SCLK    =P0^0;
 sbit	SDA     =P0^1;
@@ -16,7 +17,10 @@ sbit	RES     =P0^2;
 sbit	A0      =P0^3;
 sbit	CS      =P0^4;
 
-/****************** ±àÒëÆ÷×Ô¶¯Éú³É£¬ÓÃ»§ÇëÎğĞŞ¸Ä ************************************/
+
+
+
+/****************** ç¼–è¯‘å™¨è‡ªåŠ¨ç”Ÿæˆï¼Œç”¨æˆ·è¯·å‹¿ä¿®æ”¹ ************************************/
 
 //#define T1_TimerReload	(256 - MAIN_Fosc / 192 / Baudrate0)		//Calculate the timer1 reload value	at 12T mode
 #define T1_TimerReload	(256 - MAIN_Fosc / 16 / Baudrate0)		//Calculate the timer1 reload value ar 1T mode
@@ -33,14 +37,14 @@ sbit	CS      =P0^4;
 
 int FontColor=0;
 
-int MaxCol=128;	   //ÆÁ¿í¶È
-int MaxRow=128;	   //ÆÁ¸ß¶È
+int MaxCol=128;	   //å±å®½åº¦
+int MaxRow=128;	   //å±é«˜åº¦
 
-int px=0;		   //xÆ«ÒÆ
-int py=32;		   //yÆ«ÒÆ
+int px=0;		   //xåç§»
+int py=32;		   //yåç§»
 
-int PicW=128;	   //Í¼Æ¬¿í
-int PicH=128;	   //Í¼Æ¬¸ß
+int PicW=128;	   //å›¾ç‰‡å®½
+int PicH=128;	   //å›¾ç‰‡é«˜
 //==================================================
 void  Delay(uint t);
 uchar code Zk_ASCII8X16[];
