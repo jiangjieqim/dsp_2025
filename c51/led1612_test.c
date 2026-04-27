@@ -1,13 +1,26 @@
+
 #include <reg51.h>
 #include <intrins.h>
-#define LINE_MAX_NUM 16
-#define u8 unsigned char  //0~255
+
+#pragma region desc
+/*
+LED1602 desc
+
+proteus1/led1612_test.pdsprj
+*/
+
+
 //数据端口
 #define LED1602_DS P0
 
-sbit LED1602_RS = P2 ^ 2;
-sbit LED1602_RW = P2 ^ 1;
-sbit LED1602_E = P2 ^ 0;
+sbit LED1602_RS  = P2 ^ 2;
+sbit LED1602_RW  = P2 ^ 1;
+sbit LED1602_E   = P2 ^ 0;
+
+#pragma endregion
+
+#define LINE_MAX_NUM 16
+#define u8 unsigned char  //0~255
 
 #define __DELAY__ 1
 

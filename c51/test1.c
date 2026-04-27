@@ -1,8 +1,8 @@
 /*
 2400-115200
-
-
 */
+
+
 #include <reg51.h>
 sbit LED = P0^0;
 #define __DELAY__ 1000

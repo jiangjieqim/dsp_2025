@@ -106,6 +106,7 @@
 [Fritzing](#Fritzing)  
 [ILI9341V驱动芯片](#ILI9341V驱动芯片)  
 [QA](#QA)  
+[范例](#范例)  
 
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
@@ -3293,3 +3294,9 @@ P0 作为普通 I/O 口时，内部上拉管被切断，只剩下一个只能拉
 锁存器反向输出段Q为0  
 场效应VT1截止，引脚与GND断开连接,由于外部加了上拉电阻，
 引脚利用外部上拉输出高电平1
+
+
+# 范例
+
+{file}c51/led1612_test.c@desc{!file}  
+![](img/40.png)  
