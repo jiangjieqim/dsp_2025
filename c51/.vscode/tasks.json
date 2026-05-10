@@ -78,7 +78,7 @@
             "problemMatcher": []
         },
         {
-            "label": "c51 compile current ${file}",
+            "label": "c51 compile current ${file} 编译当前文件",
             "type": "shell",
             "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json ${fileBasename}",
             // "command":"echo ${file}",
