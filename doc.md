@@ -107,6 +107,7 @@
 [ILI9341V驱动芯片](#ILI9341V驱动芯片)  
 [QA](#QA)  
 [范例](#范例)  
+[task说明](#task说明)  
 
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
@@ -3315,3 +3316,11 @@ _nop_();
 
 {file}c51/led1612_test.c@desc{!file}  
 ![](img/40.png)  
+
+
+# task说明
+
+c51/tasks.json  
+```
+clear:清理工程  
+```
