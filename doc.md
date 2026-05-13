@@ -3325,4 +3325,6 @@ _nop_();
 c51/tasks.json  
 ```
 clear:清理工程  
+
+c51 compile current ${file} 编译当前文件
 ```
