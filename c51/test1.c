@@ -20,6 +20,12 @@ delay(unsigned int time)
    /*
     Simulation is not running in real time due to excessive CPU load.
     0.012789069s
+
+
+
+以最常见的标准8051架构（12T，即12个时钟一个机器周期）为例，假设你的单片机使用12MHz晶振：
+计算单个机器周期时间：12 / 12,000,000Hz = 0.000001秒 = 1微秒 (µs)
+得到 _nop_() 执行时间：因为 _nop_() = 1个机器周期，所以它的执行时间就是 1微秒 (µs)。
    */
     _nop_();
 }
