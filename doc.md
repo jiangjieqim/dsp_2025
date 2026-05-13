@@ -3320,6 +3320,8 @@ _nop_();
 
 # task说明
 
+版本: PROTEUS 8.9
+
 c51/tasks.json  
 ```
 clear:清理工程  

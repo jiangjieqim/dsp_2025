@@ -115,7 +115,8 @@
         {
 			"label": "clear",
             "type": "shell",
-            "command":"echo off & cd ../proteus1 & del *.workspace *.pdsbak & cd clip & del *.workspace *.pdsbak & cd ${workspaceFolder} & del *._ia *.__i *.plg *.bak *.lst *.obj & git status",
+            // "command":"echo off & cd ../proteus1 & del *.workspace *.pdsbak & cd clip & del *.workspace *.pdsbak & cd ${workspaceFolder} & del *._ia *.__i *.plg *.bak *.lst *.obj &  for %f in (*.) do del \"%f\"",
+            "command":"call ../cmd/clear.bat",
             "problemMatcher": []
 		}
     ]
