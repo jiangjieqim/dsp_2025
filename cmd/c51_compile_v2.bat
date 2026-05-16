@@ -52,6 +52,3 @@ if exist %filename%.hex (
 ) else (
     echo Error£ºbuild %filename%.hex
 )
-
-
-pause

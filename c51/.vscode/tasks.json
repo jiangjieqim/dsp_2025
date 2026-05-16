@@ -84,7 +84,13 @@
             // "command":"echo ${file}",
             "problemMatcher": []
         },
-
+        {
+            "label": "c51 compileV2 current ${file}",
+            "type": "shell",
+            "command":"echo off & cd ../cmd & call c51_compile_v2 ${fileBasename}",
+            // "command":"echo ${file}",
+            "problemMatcher": []
+        },
         {
             "label": "c51_compile timer",
             "type": "shell",

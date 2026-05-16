@@ -11,7 +11,7 @@
     "CPU_VENDOR":"Atmel",
     "CPU_XTAL":"11059200",
     "src": {
-        "path": ""  ,
+        "path": "./src"  ,
         "files": []
     }
 }
