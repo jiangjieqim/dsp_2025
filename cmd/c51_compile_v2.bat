@@ -22,7 +22,6 @@ if "%1"=="" (
 REM 设置文件名变量
 set filename=%1
 
-set "filename=test1.c"
 set "basename=%filename:.c=%"
 
 set filename=%basename%
