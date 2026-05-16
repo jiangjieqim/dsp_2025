@@ -1,6 +1,9 @@
 {
     "KeilC51":"C:/Keil_v5/C51",
-    "directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND",
+    "directive":"ROM(LARGE)",
+
+    "Backup parameter for directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND",
+
     "rpath":"D:/github/dsp/c51",
     "include": "./include", 
     "STARTUP": "STARTUP.A51",

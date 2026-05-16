@@ -51,6 +51,7 @@
 [Keil uVision4命令行编译](#Keil uVision4命令行编译)  
 
  * [CommandLine](#CommandLine)`51编译器相关内容`  
+ * C51编译器参数{h}:8001/github/jjqmdlib/entry/doc.html?file=github\dsp_2025\C51编译器参数.md{!h}  
  * [C51编译器注意事项](#C51编译器注意事项)`软件实现相关建议`  
 
 {r}▲{!r}[Keil调试](#Keil调试)  
@@ -931,12 +932,15 @@ The BL51 Linker/Locator merges segments from object modules, locates them, and c
 
 {r}OH51 banked_obj_file{!r}  
 `OH51 abs_file <[>HEXFILE (file)<]>`  
-`OH51 MYFILE HEXFILE(MYFILE.HEX)`  
+`OH51 MYFILE HEXFILE(MYFILE.HEX)` 
 
-{r}github/nodelib/c51_compile2.js说明{!r}  
+`编译参数配置在c51/purl.json中`
+
+`github/nodelib/c51_compile2.js说明`  
 {file}c51/filelist.json{!file}  
 {file}github/nodelib/c51_compile2.js@filelistjson{!file}  
 {file}github/nodelib/c51_compile2.js@c51compile说明{!file}  
+
 
 {r}xtal{!r}  
 xtal表示外部晶振（或外接晶振）（External Crystal Oscillator)。而外部晶振常常连接至单片机的腿（PIN），常常使用XTAL加上数字表示连接外部晶振。X取的是External的其中一个字母。国外经常以X表示外部，而表示内部的用I（Internal)。 
