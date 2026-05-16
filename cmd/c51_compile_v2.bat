@@ -44,5 +44,14 @@ REM 链接生成最终文件
 REM 生成 HEX 文件
 "%keil%/BIN/OH51.EXE" %filename%
 
-echo 编译完成！生成文件：%filename%.hex
+if exist %filename%.hex (
+    echo Finish！build：%filename%.hex
+    for %%A in (%filename%.hex) do (
+        echo file size %%~zA bytes
+    )
+) else (
+    echo Error：build %filename%.hex
+)
+
+
 pause
