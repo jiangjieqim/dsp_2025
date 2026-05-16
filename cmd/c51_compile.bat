@@ -5,6 +5,8 @@ set workspaceFolder=%1
 set filelistparm=%2
 set filename=%3
 
+echo run %~f0 now...
+
 echo filelistparm is %filelistparm%
 
 set github=%cd%
