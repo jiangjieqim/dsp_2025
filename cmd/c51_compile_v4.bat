@@ -22,22 +22,22 @@ if "%2"=="" (
 
 echo RUN BAT"%~f0 %1 %2"
 
-
 set keil=%Keil_v5%/C51
 
 set myc51=%githubdir%\dsp_2025\c51
 set inc=%githubdir%\dsp_2025\c51/include
 SET C51INC=%keil%/INC/Atmel/;%keil%/INC/;%inc%;
 SET C51LIB=%keil%/LIB
-SET CPU_TYPE=AT89C52
-SET CPU_VENDOR=Atmel
-SET CPU_XTAL=11059200
+
+@REM CPU_TYPE、CPU_VENDOR、CPU_XTAL：无效。这些只是 IDE 内部的配置项，命令行工具不认，属于“冗余”。
+@REM SET CPU_TYPE=AT89C52
+@REM SET CPU_VENDOR=Atmel
+@REM SET CPU_XTAL=11059200
 
 set TARGET=%2
 
 set "basename=%TARGET:.c=%"
 set TARGET=%basename%
-
 
 "%keil%/BIN/A51.EXE" "%myc51%/STARTUP.A51" SET (SMALL) DEBUG EP
 "%keil%/BIN/C51.EXE" "%myc51%/%TARGET%.c" ROM(LARGE)
@@ -48,5 +48,5 @@ cd %myc51%
 "%keil%/BIN/OH51.EXE" "%TARGET%"
 
 for %%A in (%TARGET%.hex) do (
-    echo file size %%~zA bytes
+    echo %TARGET%.hex size %%~zA bytes
 )
