@@ -982,15 +982,19 @@ void func(){
 
 2.可在代码行前F9下断点 Ctrl+F5打开`Start/Stop Debug Session`进行断点调试  
 
-{r}Logic Analyzer{!r}  
-逻辑分析器    
-View/Analyzer/Logic Analyzer  
+        F10单步调试
+        F11逐行调式
 
-Zoom:[In放大 Out缩小 All显示全部]  
 
-在视图中使用Left Right可以移动到电平跳变沿位置  
+3.打开逻辑分析器`Logic Analyzer`  
 
-View/Symbols Window/Simulator VTREG{r}模拟器标识字符串{!r}
+        View/Analyzer/Logic Analyzer  
+
+        Zoom:[In放大 Out缩小 All显示全部]  
+
+        在视图中使用Left Right可以移动到电平跳变沿位置  
+
+View/Symbols Window/Simulator VTREG`模拟器标识字符串`
 可以在`逻辑分析器中查看`比如PORT2就标识引脚Port2  
 
 可watch的变量  
@@ -1000,7 +1004,9 @@ View/Symbols Window/Simulator VTREG{r}模拟器标识字符串{!r}
 Setup  
 ![](img/63.jpg)  
 
-{r}注意{!r}  
+![](img/41.png)  
+
+`注意`  
 应用场景和理论情况会出现一定的误差(例如一个机器周期的值和预期值只是近似等于)  
 
 
