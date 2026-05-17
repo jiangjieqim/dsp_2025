@@ -12,7 +12,7 @@
         {
             "label": "commit ${file}",
             "type": "shell",
-            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0  /logmsg . & git push",
+            "command": "TortoiseGitProc.exe /command:commit /path:${file} /closeonend:0  /logmsg . ",
             "problemMatcher": []
         },
         {
