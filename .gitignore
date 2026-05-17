@@ -47,4 +47,6 @@
 
 
 /stm32GPIO/Target 1.BAT
-/keil_temp/*.plg
+
+/test_project1/test_project1.uvopt
+/test_project1/test_project1.plg
