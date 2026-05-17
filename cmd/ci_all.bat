@@ -8,6 +8,6 @@ echo cur folder is %cd%
 
 "TortoiseGitProc.exe" /command:commit /path:%cd% /closeonend:0 /logmsg . 
 
-git status  
-git pull
+@REM git status  
+@REM git pull
 git push
