@@ -1,4 +1,6 @@
-@echo off
+set Keil_v5=C:\Keil_v5
+
+if not exist %Keil_v5% ( echo not exist %Keil_v5% & exit )
 
 set workspaceFolder=%1
 
@@ -12,9 +14,10 @@ set filename=%basename%
 
 
 REM 设置环境变量
-set PATH=C:\Keil_v5\C51\BIN;%PATH%
-set C51LIB=C:\Keil_v5\C51\LIB
-set C51INC=C:\Keil_v5\C51\INC
+set PATH=%Keil_v5%\C51\BIN;
+@REM %PATH%
+set C51LIB=%Keil_v5%\C51\LIB
+set C51INC=%Keil_v5%\C51\INC
 
 if exist %filename%.hex ( del %filename%.hex )
 
@@ -37,5 +40,3 @@ OH51 %filename%
 for %%A in (%filename%.hex) do (
     echo file size %%~zA bytes
 )
-
-pause
