@@ -58,3 +58,5 @@
 /test_project1/*.hex
 /test_project1/*.lnp
 /test_project1/test_project1
+/test_project1/*.ls1
+/test_project1/*.SRC
