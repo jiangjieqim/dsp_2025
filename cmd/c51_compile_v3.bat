@@ -12,7 +12,6 @@ set "basename=%filename:.c=%"
 
 set filename=%basename%
 
-
 REM 设置环境变量
 set PATH=%Keil_v5%\C51\BIN;
 @REM %PATH%
