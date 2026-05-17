@@ -51,3 +51,10 @@
 /test_project1/test_project1.uvopt
 /test_project1/test_project1.plg
 /test_project1/test_project1_uvopt.bak
+/test_project1/*.M51
+/test_project1/*.OBJ
+/test_project1/*.plg
+/test_project1/*.LST
+/test_project1/*.hex
+/test_project1/*.lnp
+/test_project1/test_project1
