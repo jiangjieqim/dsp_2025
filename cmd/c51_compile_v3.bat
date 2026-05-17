@@ -1,3 +1,4 @@
+echo off
 set Keil_v5=C:\Keil_v5
 
 if not exist %Keil_v5% ( echo not exist %Keil_v5% & exit )
