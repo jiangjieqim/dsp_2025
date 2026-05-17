@@ -60,3 +60,5 @@
 /test_project1/test_project1
 /test_project1/*.ls1
 /test_project1/*.SRC
+/test_project1/Target 1.BAT
+/test_project1/test_project1_uvproj.bak
