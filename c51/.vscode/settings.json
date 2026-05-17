@@ -15,6 +15,7 @@
       "ios": "c",
       "ostream": "c",
       "REG52.H": "cpp",
-      "ABSACC.H": "cpp"
+      "ABSACC.H": "cpp",
+      "delay_us.h": "c"
    }
 }

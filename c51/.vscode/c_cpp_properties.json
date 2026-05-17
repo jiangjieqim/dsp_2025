@@ -5,6 +5,8 @@
             "includePath": [
                 "d:\\github\\dsp_2025\\c51",
                 "d:\\github\\dsp_2025\\c51\\src",
+                "d:\\github\\dsp_2025\\c51\\include",
+
                 "C:\\Keil_v5\\C51\\INC"
             ],
             "defines": [

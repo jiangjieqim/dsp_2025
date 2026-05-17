@@ -65,7 +65,7 @@
             "type": "shell",
             // "command":"echo off& cd ../cmd & call compile",
             // D:/github/dsp/libs/utils.c
-            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} filelist.json test1.c",
+            "command":"echo off & cd ../cmd & c51_compile ${workspaceFolder} filelist.json test1.c",
             "problemMatcher": []
         },
 
@@ -80,9 +80,16 @@
         {
             "label": "c51 compile current ${file} 编译当前文件",
             "type": "shell",
-            "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json ${fileBasename}",
+            // "command":"echo off & cd ../cmd & call c51_compile ${workspaceFolder} purl.json ${fileBasename}",
+          
+            "command":"cd ../cmd & call c51_compile_v4 ${workspaceFolder} ${fileBasename}",
+
+            
             // "command":"echo ${file}",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "dependsOn":[
+                "clear"
+            ]
         },
         {
             "label": "c51 compileV3 current ${file}",

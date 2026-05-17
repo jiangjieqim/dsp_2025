@@ -1,15 +1,12 @@
 {
     "KeilC51":"C:/Keil_v5/C51",
-    "directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND",
+    "directive":"ROM(LARGE) BROWSE DEBUG OBJECTEXTEND OPTIMIZE(9)",
     "include": "./include", 
     "entry": "test1.c",
     "STARTUP": "STARTUP.A51",
-    "CPU_TYPE":"AT89C52",
-    "CPU_VENDOR":"Atmel",
-    "CPU_XTAL":"11059200",
     "src": {
         "path": "./src"  ,
-        "files": ["utils.c"]
+        "files": ["delay_us.c"]
     }
 }
 

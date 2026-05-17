@@ -1,7 +1,3 @@
-
-
-
-
 #include <reg51.h>
 #include <intrins.h>
 
