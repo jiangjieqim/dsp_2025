@@ -85,11 +85,14 @@
             "problemMatcher": []
         },
         {
-            "label": "c51 compileV2 current ${file}",
+            "label": "c51 compileV3 current ${file}",
             "type": "shell",
-            "command":"echo off & cd ../cmd & call c51_compile_v2 ${fileBasename}",
+            "command":"cd ../cmd & call c51_compile_v3 ${workspaceFolder} ${fileBasename}",
             // "command":"echo ${file}",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "dependsOn":[
+                "clear"
+            ]
         },
         {
             "label": "c51_compile timer",
