@@ -1,32 +1,23 @@
 #include <reg51.h>
 #include <intrins.h>
 
-/*
-右键点击项目 → Options for Target 'Target 1'
 
-切换到 Listing 标签页
 
-勾选 Assembler SRC 选项
-
-重新编译
-
-*/
-
-void delay() {
+void delay(unsigned char count) {
     #pragma asm
-    MOV R7, #10
+    MOV A, R7        // C函数参数通过R7传递
+    MOV R7, A
 DEL_LOOP:
-    MOV R6, #20
+    MOV R6, #2
     DJNZ R6, $
     DJNZ R7, DEL_LOOP
     #pragma endasm
-}
-				
+}			
 void main() {
     while(1) {
         P0 = 0x0;
-       	delay();
+       	delay(0x01);
         P0 = 0x1;
-        delay();
+        delay(0x01);
     }
 }
