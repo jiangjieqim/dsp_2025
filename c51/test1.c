@@ -32,8 +32,8 @@
 void main() {
     while(1) {
         P0 = 0x0;
-        delay_us_Macros(10);
+        DELAY_1US();
         P0 = 0x1;
-        delay_us_Macros(1);
+        DELAY_1US();
     }
 }
