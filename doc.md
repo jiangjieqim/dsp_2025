@@ -811,7 +811,7 @@ new project
 *将代码添加到工程*  
 右键Source Group 1,Add files to Group"Souce Group 1"  
 
-{r}编译{!r}  
+`编译`  
 Project/Build Tagrt(F7)
 
 ```
@@ -822,33 +822,44 @@ linking...
 Program Size: data=9.0 xdata=0 code=16
 "a1" - 0 Error(s), 0 Warning(s).
 ```
-*清理*
+`清理`  
 Project/Clean Target
 
-*输出设置*  
+`输出设置`  
 Project/Options for Taggets 'Target1'  
 Target页签的Atmal AT89C52的Xtal(MHz)填写`11.0592`晶振频率  
 
 Output页签勾选Create HEX File HEX Format: `HEX-80` 会生成.hex的目标文件(十六进制代码)
 
-*文件说明*
-
+`文件说明`  
 *plg Contents of the Build Window for Each Make(每次构建的日志)  
 
-*调试*  
+`调试`  
 Debug->Start/Stop Debug Session
 
-*快捷键*  
+`快捷键`  
 f7 编译  
 ctrl+ f5 启动调试/退出调试  
 f9下断点  
+f10,f11 单步调试  
 ctrl+shift+f9 清除所有的断点  
 
-*清理*
+`清理`  
 Project/Clean Taget  
 
-{r}修改时钟频率{!r}  
+`修改时钟频率`  
 Option for Target/Xtal(MHz) (如填写12Mhz)  
+
+`设置输出批处理文件`  
+
+        勾选`Options for Target 'Target 1'` 的Create Batch File 
+        触发生成（最关键的一步）
+        `不要点 Build (F7) 或 Translate。`
+        请务必点击菜单栏的 `Project -> Rebuild all target files` （或者工具栏上带两个向下箭头的图标）。
+
+原因分析：官方手册明确说明，Build 命令不会创建该文件。只有在点击 Rebuild（全部重新编译）时，µVision 才会生成这个批处理脚本
+
+
 
 # Keil uVision4命令行编译
 
