@@ -401,11 +401,6 @@
               <FileType>4</FileType>
               <FilePath>.\C51L.LIB</FilePath>
             </File>
-            <File>
-              <FileName>C51L.LIB</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\C51L.LIB</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>
