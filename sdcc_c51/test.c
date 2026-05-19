@@ -1,12 +1,12 @@
 #include "STC89C5xRC.h"
-
-#define _nop_() __asm nop __endasm
+#include "intrins.h"
+#include "delay_us.h"
 
 void main(void) {
     while(1) {
         P0 = 0x0;
-        _nop_();
+        DELAY_1US();
         P0 = 0x1;
-        _nop_();
+        DELAY_1US();
     }
 }
