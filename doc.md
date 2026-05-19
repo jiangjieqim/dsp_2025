@@ -112,6 +112,7 @@
 [QA](#QA)  
 [范例](#范例)  
 [task说明](#task说明)  
+[SDCC编译器](#SDCC编译器)  
 
 # 资料查询相关
 元器件文档查询  {h}https://www.alldatasheetcn.com/{!h}  
@@ -3424,3 +3425,39 @@ clear:清理工程
 
 c51 compile current ${file} 编译当前文件
 ```
+
+# SDCC编译器
+
+1.安装包 `dsp_2025\software_steup`  
+
+2.test1.c
+```c
+#include "STC89C5xRC.h"
+#define _nop_() __asm nop __endasm
+void main() {
+    while(1) {
+        P1 = 0x0;
+        _nop_();
+        P1 = 0x1;
+        _nop_();
+    }
+}
+```
+3.编译脚本
+```CMD
+set workspaceFolder=%cd%
+
+set PATH=C:\Program Files\SDCC\bin
+
+sdcc --version
+
+if not exist output (
+    mkdir output 2>nul
+)
+
+del /Q %workspaceFolder%\output\*.*
+sdcc -mmcs51 -I. --out-fmt-ihx -o output/ test.c
+cd output
+packihx test.ihx > test.hex
+```
+
