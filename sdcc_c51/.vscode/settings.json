@@ -1,0 +1,9 @@
+{
+   // "editor.fontSize": 11.0,
+   // "markdown.preview.fontSize": 11,
+   "markdown.preview.fontFamily": "console",
+   "terminal.integrated.cursorStyle": "line",
+   "files.associations": {
+      "*.h": "c"           // 将 .h 文件也识别为 C 语言
+   }
+}

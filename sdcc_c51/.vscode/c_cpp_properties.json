@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Target 1",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/include"
+            ],
+            "defines": [
+                "__SDCC__",
+                "__STC89C5xRC_RDP_H_",
+                "__sfr=",
+                "__sbit=",
+                "__at(x)=",
+                "__interrupt(x)="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
