@@ -3428,6 +3428,17 @@ c51 compile current ${file} 编译当前文件
 
 # SDCC编译器
 
+`Small Device C Compiler (简称SDCC) 是一款免费、开源、针对8位微控制器的ANSI C交叉编译器。它为资源受限的嵌入式设备提供了一套完整的C语言开发工具链。` 
+
+```
+架构系列	具体型号/代表	支持状态
+MCS-51	        8051, 8052, 8031等	官方支持 (默认) 
+STM8	        STM8S, STM8L系列	官方支持 
+Z80	        Z80, Z180, Rabbit 2000/3000	官方支持 
+MOS             6502	6502, 65C02	官方支持
+Padauk	        PDK14, PDK15	官方支持
+```
+
 1.安装包 `dsp_2025\software_steup`  
 
 2.test1.c
