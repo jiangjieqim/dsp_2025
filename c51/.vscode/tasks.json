@@ -65,7 +65,9 @@
             "type": "shell",
             // "command":"echo off& cd ../cmd & call compile",
             // D:/github/dsp/libs/utils.c
-            "command":"echo off & cd ../cmd & c51_compile ${workspaceFolder} filelist.json test1.c",
+            // start cmd.exe /k 
+            // start cmd.exe /c
+            "command":"cd ../cmd & c51_compile ${workspaceFolder} filelist.json test1.c",
             "problemMatcher": []
         },
 
