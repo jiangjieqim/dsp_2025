@@ -46,27 +46,9 @@ void delay_us(unsigned char us) {
    毫秒延时（使用定时器）
 -------------------------------------------- */
 void delay_ms(unsigned int ms) {
-    /*
-    unsigned int i;
-    unsigned int count;
-    
-    // 1ms 需要的计数值（12MHz: 1000次计数）
-    count = 1000 * (FOSC_MHZ / 12);
-    
-    for(i = 0; i < ms; i++) {
-        TH0 = (65536 - count) >> 8;
-        TL0 = (65536 - count) & 0xFF;
-        TR0 = 1;
-        while(TF0 == 0);
-        TR0 = 0;
-        TF0 = 0;
-    }
-    */
     unsigned int i, j;
     for(i = 0; i < ms; i++) {
-        // 内层循环：约1ms @11.0592MHz
-        // 实际值需要根据编译器优化等级调整
-        for(j = 0; j < 3687; j++) {
+        for(j = 0; j < 1000; j++) {
             _nop_();
         }
     }
