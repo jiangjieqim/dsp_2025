@@ -35,7 +35,12 @@
         },
 
       
- 
+        {
+            "label": "sdcc_compile test",
+            "type": "shell",
+            "command":"call sdcc_compile ${workspaceFolder} test.c",
+            "problemMatcher": []
+        },
   
     
        
