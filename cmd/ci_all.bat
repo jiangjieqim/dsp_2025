@@ -10,4 +10,5 @@ echo cur folder is %cd%
 
 @REM git status  
 @REM git pull
-start cmd.exe /k git push
+start cmd.exe /c git push
+ping 127.0.0.1
