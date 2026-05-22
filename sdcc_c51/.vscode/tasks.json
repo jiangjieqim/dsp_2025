@@ -33,8 +33,6 @@
             "command":"start cmd.exe /c sdcc_compile ${workspaceFolder} ${fileBasename}",
             "problemMatcher": []
         },
-
-      
         {
             "label": "sdcc_compile test",
             "type": "shell",
