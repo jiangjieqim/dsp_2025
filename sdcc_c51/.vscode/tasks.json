@@ -30,7 +30,7 @@
             // D:/github/dsp/libs/utils.c
             // start cmd.exe /k 
             // start cmd.exe /c
-            "command":"call sdcc_compile ${workspaceFolder} ${fileBasename}",
+            "command":"start cmd.exe /c sdcc_compile ${workspaceFolder} ${fileBasename}",
             "problemMatcher": []
         },
 
@@ -38,7 +38,7 @@
         {
             "label": "sdcc_compile test",
             "type": "shell",
-            "command":"call sdcc_compile ${workspaceFolder} test.c",
+            "command":"start cmd.exe /c sdcc_compile ${workspaceFolder} test.c",
             "problemMatcher": []
         },
   

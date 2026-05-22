@@ -10,4 +10,4 @@ echo cur folder is %cd%
 
 @REM git status  
 @REM git pull
-git push
+start cmd.exe /k git push

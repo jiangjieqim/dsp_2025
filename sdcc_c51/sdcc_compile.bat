@@ -38,4 +38,4 @@ for %%A in (%program%.hex) do (
     echo %program%.hex size %%~zA bytes
 )
 
-@REM pause
+pause
