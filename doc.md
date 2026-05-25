@@ -673,6 +673,9 @@ Vceo Collector-Emitter Voltage  40V      {r}Vce最大承受电压{!r}
 Ic collector current(DC)        800mA    {r}可通过最大电流{!r}  
 hFE DC current gain {r}当前增益放大倍数{!r}  
 # Proteus软件 
+
+* 安装包:百度网盘 我的网盘/软件安装包/Proteus 8.9SP2  
+
 * +/- 正/反向旋转元件  
 * Component Mode 组件模式  
 * Pick Derices --->添加元件组件
