@@ -3457,6 +3457,47 @@ TMOD = (TMOD & 0xF0) | 0x01;
 ![](img/40.png)  
 
 
+`Q 启动流程`  
+```
+上电复位
+    ↓
+PC = 0x0000 (中断向量表)
+    ↓
+ljmp __sdcc_gsinit_startup
+    ↓
+执行 GSINIT 段：
+    - 初始化全局变量 (a = 0)
+    - 清理 RAM
+    ↓
+ljmp __sdcc_program_startup
+    ↓
+ljmp _main
+    ↓
+进入主函数无限循环
+
+
+
+
+```
+
+        ROM 地址
+        0x0000  ┌─────────────────────┐
+                │  __interrupt_vect   │  ljmp __sdcc_gsinit_startup
+        0x0003  ├─────────────────────┤
+                │  原子操作支持代码    │  (约5字节)
+        0x0008  ├─────────────────────┤
+                │  GSINIT 段代码      │  ← 这里就是 __sdcc_gsinit_startup
+                │  - 全局变量初始化    │     标号所在位置
+                │  - 内存清理等        │
+                ├─────────────────────┤
+                │  GSFINAL 段代码      │
+                ├─────────────────────┤
+                │  CSEG 段代码         │
+                │  - main 函数等       │
+                └─────────────────────┘
+
+
+
 # task说明
 
 版本: PROTEUS 8.9

@@ -25,7 +25,9 @@ set program=program
 sdcc -c -mmcs51 -Iinclude %TARGET%.c -o %OUT_DIR%\%TARGET%.rel
 sdcc -c -mmcs51 -Iinclude src\delay.c -o %OUT_DIR%\delay.rel
 
-sdcc -mmcs51 %OUT_DIR%\%TARGET%.rel %OUT_DIR%\delay.rel -o %OUT_DIR%\%program%.ihx
+sdcc -mmcs51 --opt-code-size %OUT_DIR%\%TARGET%.rel %OUT_DIR%\delay.rel -o %OUT_DIR%\%program%.ihx
+@REM --opt-code-speed
+@REM --opt-code-size
 
 cd output
 
