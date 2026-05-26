@@ -8,9 +8,9 @@
 // SDCC中sbit的定义方式略有不同
 __sbit __at (0x80) GPIO_P0_0;  // P0.0地址为0x80
 
-unsigned int interrupt_cnt = 0;  // 当前中断发生次数
 unsigned int target_cnt = 1000;     // 需要达到的中断次数
-
+#define INTERRUPT_TIME    1000      // 每次中断的时长(us)
+unsigned int interrupt_cnt = 0;     // 当前中断发生次数
 
 /*
 目标时间	timer_config_us参数	 target_cnt值
@@ -53,8 +53,8 @@ void timer_config_us(unsigned int us) {
 }
 
 void timer0_init(void) {
-    TMOD = (TMOD & 0xF0) | 0x01;  // 模式1，16位定时器
-    timer_config_us(1000);         // 1ms中断
+    TMOD = (TMOD & 0xF0) | 0x01;    // 模式1，16位定时器
+    timer_config_us(INTERRUPT_TIME);// 1ms中断
     
     ET0 = 1;  // 允许定时器0中断
     EA = 1;   // 总中断使能
@@ -63,7 +63,7 @@ void timer0_init(void) {
 
 // SDCC中断函数语法
 void timer0_isr(void) __interrupt (1) __using (1) {
-    timer_config_us(1000);  // 重新加载
+    timer_config_us(INTERRUPT_TIME);  // 重新加载
     interrupt_cnt++;
 }
 
