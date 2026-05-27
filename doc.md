@@ -53,7 +53,7 @@
 [Keil uVision4命令行编译](#Keil uVision4命令行编译)  
 
  * [CommandLine](#CommandLine)`51编译器相关内容`  
- * C51编译器参数{h}:8001/github/jjqmdlib/entry/doc.html?file=github\dsp_2025\C51编译器参数.md{!h}  
+ * {h}:8001/github/jjqmdlib/entry/doc.html?file=github\dsp_2025\C51编译器参数.md{!h}  
  * [C51编译器注意事项](#C51编译器注意事项)`软件实现相关建议`  
 
 `▲`[Keil调试](#Keil调试)  
@@ -3466,7 +3466,7 @@ TMOD = (TMOD & 0xF0) | 0x01;
 ![](img/40.png)  
 
 
-`Q 启动流程`  
+`Q 8051启动流程`  
 ```
 上电复位
     ↓
