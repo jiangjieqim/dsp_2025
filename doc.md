@@ -3503,6 +3503,34 @@ ljmp _main
                 │  - main 函数等       │
                 └─────────────────────┘
 
+`Q .asm文件解析`  
+
+        ;--------------------------------------------------------
+        ; special function registers
+        ;--------------------------------------------------------
+                .area RSEG    (ABS,DATA)
+                .org 0x0000
+
+
+* 1. .area RSEG (ABS,DATA)
+RSEG: "Relative Segment" 或 "Relocatable Segment"（可重定位段）的缩写
+
+ABS: Absolute addressing（绝对寻址）- 意味着这个段使用固定地址
+
+DATA: 指向8051的内部RAM数据空间（直接寻址，0x00-0x7F）
+
+这是声明一个寄存器段，用于存放8051的特殊功能寄存器（SFR）定义。
+
+*  2. .org 0x0000
+设置当前地址计数器为0x0000，告诉汇编器后续内容从地址0开始放置。
+
+
+```
+        内部RAM (DATA空间)
+        0x00-0x7F: 直接寻址RAM
+        0x80-0xFF: 特殊功能寄存器(SFR)
+```
+
 
 
 # task说明

@@ -34,12 +34,34 @@
             "problemMatcher": []
         },
         {
+            "label": "sdcc_compile_cur ${file}",
+            "type": "shell",
+            "command":"start cmd.exe /c sdcc_compile_cur ${workspaceFolder} ${fileBasename}",
+            "problemMatcher": []
+        },
+        {
             "label": "sdcc_compile test",
             "type": "shell",
             "command":"start cmd.exe /c sdcc_compile ${workspaceFolder} test.c",
             "problemMatcher": []
         },
-  
+        {
+            "label": "del optupt",
+            "type": "shell",
+            "command":"start cmd.exe /c rd /s /q output 2>nul",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "asm ${file}",
+            "type": "shell",
+            "command":"sdcc -mmcs51 -S ${fileBasename} -o output/",
+            "problemMatcher": []
+        },
+        
+
+
+       
     
        
 
