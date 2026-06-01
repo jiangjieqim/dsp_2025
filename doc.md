@@ -3421,6 +3421,8 @@ _nop_();
 
 `Q TMOD计时器`  
 
+参考 [定时器](#定时器)  
+
 Timer Mode Register(定时器模式寄存器)  
 专门用来配置 Timer 0 和 Timer 1 的 4 个模式位的寄存器。
 
